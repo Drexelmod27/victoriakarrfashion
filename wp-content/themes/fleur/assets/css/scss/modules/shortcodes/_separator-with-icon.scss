@@ -1,0 +1,80 @@
+.mkd-separator-with-icon-holder {
+	position: relative;
+	margin-top: 18px;
+	text-align: center;
+
+	.mkd-title-holder & {
+		text-align: inherit;
+	}
+
+	&.mkd-default-icon {
+		letter-spacing: 0;
+		font-size: 0;
+		line-height: 0;
+
+		.mkd-separator-left, .mkd-separator-right {
+			display: inline-block;
+			height: 1px;
+			opacity: 0.5;
+			background-color: $first-main-color;
+			width: 39px;
+		}
+
+		.mkd-separator-left {
+			margin-right: 5px;
+		}
+
+		.mkd-separator-right {
+			margin-left: 5px;
+		}
+
+		.mkd-default-icon-holder {
+			display: inline-block;
+			background-color: $first-main-color;
+			height: 5px;
+			width: 5px;
+			position: relative;
+			top: 2px;
+
+			@include mkdTransform(rotate(45deg));
+		}
+	}
+
+	&.mkd-custom-icon {
+		.mkd-separator-left {
+			float: left;
+			height: 1px;
+			background-color: $first-main-color;
+			width: calc((100% - 115px) / 2);
+		}
+
+		.mkd-separator-right {
+			float: right;
+			height: 1px;
+			background-color: $first-main-color;
+			width: calc((100% - 115px) / 2);
+		}
+
+		.mkd-icon-holder {
+			display: inline-block;
+			background-color: #fff;
+			height: 75px;
+			width: 75px;
+			font-size: 30px;
+			line-height: 75px;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border: 1px solid #eee;
+
+			@include mkdTransform(translate(-50%, -50%));
+			@include mkdBorderRadius(50%);
+			@include mkdBoxShadow($shadow);
+
+			.mkd-icon-simple-line-icon {
+				line-height: inherit;
+			}
+		}
+	}
+}

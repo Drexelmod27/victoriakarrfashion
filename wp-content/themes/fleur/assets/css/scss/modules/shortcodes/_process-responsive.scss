@@ -1,0 +1,64 @@
+@include large-laptop {
+	.mkd-process-holder {
+		.mkd-process-item-holder {
+			.mkd-pi-image-holder {
+				width: 275px;
+				height: 275px;
+				margin-top: -20px;
+			}
+
+			.mkd-pi-holder-inner {
+				width: 100%;
+			}
+
+		}
+	}
+}
+
+@include laptop-landscape {
+	.mkd-process-holder {
+		&.mkd-process-holder-items-four {
+			.mkd-process-item-holder {
+				width: 50%;
+				margin-bottom: 30px;
+
+				.mkd-pi-holder-inner {
+					width: 100%;
+
+					.mkd-number-holder-inner {
+						&:before, &:after {
+							display: none;
+						}
+					}
+
+					.mkd-pi-content-holder {
+						padding: 0 20px;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+	.mkd-process-holder {
+		&.mkd-process-holder-items-three {
+			.mkd-process-item-holder {
+				.mkd-pi-image-holder {
+					margin-top: 0;
+				}
+
+			}
+		}
+
+		.mkd-process-item-holder {
+			width: 100% !important;
+			margin-bottom: 30px;
+
+			.mkd-pi-holder-inner {
+				width: 100%;
+			}
+		}
+	}
+}

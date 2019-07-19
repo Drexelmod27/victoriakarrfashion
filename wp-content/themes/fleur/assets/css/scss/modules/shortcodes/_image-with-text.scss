@@ -1,0 +1,53 @@
+.mkd-iwt {
+	text-align: center;
+
+	.mkd-image-holder {
+		box-shadow: 0px 2px 6px 0 rgba(0,0,0,.15);
+		@include mkdTransform(translate3d(0,0,0));
+		@include mkdTransition(all 0.3s ease);
+
+		&:hover {
+			box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+			@include mkdTransform(translate3d(0,-10px,0));
+		}
+
+		a, img {
+			display: block;
+		}
+
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	.mkd-separator-with-icon-holder.mkd-default-icon {
+		margin-top: 22px;
+
+		.mkd-default-icon-holder {
+			height: 4px;
+			width: 4px;
+			top: 1px;
+		}
+
+		.mkd-separator-left {
+			margin-right: 3px;
+		}
+
+		.mkd-separator-right {
+			margin-left: 3px;
+		}
+	}
+
+	.mkd-iwt-title {
+		text-transform: uppercase;
+		margin-top: 14px;
+	}
+
+	p.mkd-iwt-title {
+		font-weight: 500;
+	}
+
+	h6.mkd-iwt-title {
+		font-weight: 600;
+	}
+}

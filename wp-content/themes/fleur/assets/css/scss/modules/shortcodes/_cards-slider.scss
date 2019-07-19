@@ -1,0 +1,285 @@
+@include keyframes(tease-card-headers) {
+    0% {
+        opacity: 0;
+        transform: translate(-20%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.cards {
+    position: relative;
+    height: 90px;
+    margin-top: 50px;
+    z-index: 10;
+
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+        @include mkdTransition(all 0.3s ease-in-out);
+        position: absolute;
+        height: 90px;
+
+
+        .card-inner{
+            position: relative;
+            height: 100%;
+            border-radius: 4px 4px 0 0;
+            overflow: hidden;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            box-shadow: 0 -10px 10px rgba(95, 95, 95, 0.03);
+        }
+
+        &:nth-last-child(6) {
+            padding: 0 110px;
+            top: -75px;
+        }
+
+        &:nth-last-child(5) {
+            padding: 0 90px;
+            top: -60px;
+        }
+
+        &:nth-last-child(4) {
+            padding: 0 65px;
+            top: -45px;
+        }
+
+        &:nth-last-child(3) {
+            padding: 0 40px;
+            top: -30px;
+        }
+
+        &:nth-last-child(2) {
+            padding: 0 20px;
+            top: -15px;
+        }
+
+        &:nth-last-child(1) {
+            padding: 0 0px;
+            top: 0px;
+        }
+
+        &:not(:last-of-type) {
+            cursor: pointer;
+        }
+
+        &:not(:last-of-type):not(.active):hover,
+        &:not(:last-of-type):not(.active).hovered{
+            @include mkdTransform(translateY(-15px));
+        }
+    }
+}
+
+.mkd-card-panes{
+    position: relative;
+    width: 100%;
+
+    .pane{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        @include mkdTransition(opacity 0.5s ease);
+        z-index: 1;
+        box-shadow: 0 1px 25px rgba(95, 95, 95, 0.08);
+
+//        &:after{
+//            border-radius: 100px / 10px;
+//            bottom: 0;
+//            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+//            content: "";
+//            left: 50%;
+//            position: absolute;
+//            right: 10px;
+//            top: 50%;
+//            z-index: -1;
+//            width: 92%;
+//            @include mkdTransform(translateX(-50%));
+//        }
+
+
+        &.active{
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .card{
+            display: none; //here only for rendering, js is replacing it
+        }
+
+
+        &.navigation-bullets-disabled .mkd-card-slider-holder-outer{
+            padding-bottom: 65px;
+        }
+
+        &.border-radius .mkd-card-slider-holder{
+            .mkd-card-slider .slide img{
+                @include mkdBorderRadius(3px);
+            }
+        }
+
+        &.hover-animation .mkd-card-slider-holder{
+            .mkd-card-slider .slide:hover{
+                @include mkdTransform(translateY(-10px));
+            }
+        }
+
+        &.no-shadow{
+            @include mkdBoxShadow(none);
+            &:after{
+                display: none;
+            }
+
+            .mkd-card-slider-holder-outer{
+                margin: 0px -23px;
+                padding: 0px;
+            }
+        }
+    }
+}
+
+.mkd-card-slider-holder-outer{
+    padding-top: 30px;
+    padding-bottom: 130px;
+}
+
+.mkd-card-slider-holder{
+    position: relative;
+
+
+    .mkd-card-slider{
+        transition: margin 0.5s ease-in-out 0s;
+        white-space: nowrap;
+//        width: 99999px;
+        width: 100%;
+        position: relative;
+
+        .slide{
+            float: left;
+            padding: 0px 23px;
+            position: relative;
+            box-sizing: border-box;
+            max-width: 100%;
+            @include mkdTransition(transform 0.3s ease);
+
+            img{
+                display: block;
+                position: relative;
+                @include mkdTransition(opacity 0.3s ease);
+                box-shadow: 0 3px 20px rgba(95, 95, 95, 0.08);
+            }
+        }
+    }
+
+
+    .controls{
+        &.arrows{
+            position: static;
+        }
+
+        &.bullets{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            z-index: 100;
+            height: 55px;
+            bottom: -95px;
+        }
+
+            .button{
+                position:absolute;
+                top: 50%;
+                @include mkdTransform(translateY(-50%));
+                padding:0;
+                width:65px;
+                height: 65px;
+                z-index: 100;
+                background-color: transparent;
+                border: 0;
+                cursor:pointer;
+                @include mkdTransition(all 0.3s ease);
+                background-color: #fff;
+                box-shadow: 0 0 3px 0 rgba(163, 163, 163, 0.45);
+                @include mkdBorderRadius(50%);
+
+                &:hover{
+                    box-shadow: 0 0 5px 0 rgba(163, 163, 163, 0.45);
+                }
+
+                span {
+
+                    position: absolute;
+                    top: 0px;
+                    font-size: 23px;
+                    height: 65px;
+                    line-height: 65px;
+                    width: 65px;
+                    text-align: center;
+                    text-indent: 0;
+                    visibility:visible;
+                    cursor:pointer;
+                }
+
+                &.prev {
+                    left:25px;
+
+                    span {
+                        left: -2px;
+
+                    }
+                }
+
+                &.next {
+                    right:25px;
+
+                    span {
+
+                        right: -2px;
+                    }
+                }
+
+                &.hidden{
+                    opacity: 0;
+                    visibility: hidden;
+
+                    span{
+                        visibility: hidden;
+                    }
+                }
+            }
+
+        .dots{
+            position: relative;
+            padding: 12px 0;
+
+            .dots-inner{
+                margin: 0px auto;
+                display: table;
+
+                .dot{
+                    position: relative;
+                    width: 12px;
+                    display: inline-block;
+                    height: 12px;
+                    padding: 0;
+                    cursor: pointer;
+                    margin: 0px 5px;
+                    background-color: #acacac;
+                    @include mkdBorderRadius(50%);
+                    @include mkdTransition(background-color 0.2s ease);
+
+                    &.active{
+                        background-color: $first-main-color;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,44 @@
+/* ==========================================================================
+# Portfolio Single Big Images - begin
+========================================================================== */
+
+.mkd-portfolio-single-holder.big-images {
+
+	.mkd-portfolio-info-item {
+		margin-top: 16px;
+	}
+
+	.mkd-big-image-holder {
+		margin-bottom: 78px;
+
+		@include ipad-landscape {
+			margin-bottom:  42px;
+		}
+	}
+
+	.mkd-image-author-holder {
+		margin-top: 12px;
+	}
+
+	h4.mkd-portfolio-item-title {
+		margin-top: 7px;
+	}
+
+	.mkd-portfolio-single-media {
+		margin-bottom: 38px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.mkd-portfolio-item-content {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+/* ==========================================================================
+# Portfolio Single Big Images - end
+========================================================================== */

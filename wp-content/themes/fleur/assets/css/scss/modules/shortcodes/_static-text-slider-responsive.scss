@@ -1,0 +1,45 @@
+@include mac {
+
+	.mkd-static-text-slider-holder {
+		.mkd-static-text-slider-images-holder {
+			width: 60%;
+		}
+
+		.mkd-static-text-slider-text-holder {
+			width: 40%;
+			right: 1px;
+		}
+	}
+}
+
+@include laptop-landscape {
+
+	.mkd-static-text-slider-holder {
+		.mkd-static-text-slider-text-holder {
+			padding: 0px 20px;
+		}
+	}
+}
+
+@include ipad-landscape {
+
+	.mkd-static-text-slider-holder {
+		.mkd-static-text-slider-images-holder {
+			width: 100%;
+			float: none;
+		}
+
+		.mkd-static-text-slider-text-holder {
+			position: relative;
+			width: 100%;
+			padding: 40px;
+		}
+	}
+}
+
+@include phone-portrait {
+	.mkd-static-text-slider-holder .mkd-static-text-slider-text-holder .mkd-static-text-slider-text .mkd-static-text-slider-text-inner h2 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+}

@@ -1,0 +1,38 @@
+@include laptop-landscape {
+	.mkd-workflow {
+		.mkd-workflow-item {
+			max-width: 100%;
+
+			.mkd-workflow-item-inner .mkd-workflow-text {
+				padding: 0px 40px;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+
+	.mkd-workflow {
+
+		.main-line,
+		.mkd-workflow-item .line,
+		.mkd-workflow-item .mkd-workflow-text .circle {
+			display: none !important;
+		}
+
+		.mkd-workflow-item {
+			text-align: center !important;
+		}
+
+		.mkd-workflow-text {
+			width: 100% !important;
+			padding: 0px !important;
+		}
+
+		.mkd-workflow-image {
+			width: 100% !important;
+			margin-bottom: 20px !important;
+			text-align: center !important;
+		}
+	}
+}

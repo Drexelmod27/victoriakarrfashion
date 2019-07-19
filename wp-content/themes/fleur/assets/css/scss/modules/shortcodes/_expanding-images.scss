@@ -1,0 +1,183 @@
+.mkd-expanding-images-holder{
+    text-align: center;
+
+    .mkd-expanding-images{
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        .image{
+            left: 0;
+            max-width: 100%;
+            outline: 1px solid transparent;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include mkdTransition(transform 0.3s ease);
+
+            .image-inner{
+                display: table;
+                height: 100%;
+                width: 100%;
+
+                .image-inner2{
+                    display: table-cell;
+                    vertical-align: bottom;
+
+                    .image-inner3{
+                        display: inline-block;
+                    }
+                }
+            }
+
+            &:first-child{
+                position: relative;
+                z-index: 50;
+            }
+
+            &:nth-child(2) {
+                z-index: 49;
+                text-align: left;
+
+                .image-inner3{
+                    width: 50%;
+                }
+            }
+
+            &:nth-child(3) {
+                z-index: 48;
+                text-align: right;
+
+                .image-inner3{
+                    width: 50%;
+                }
+            }
+
+            &:nth-child(4) {
+                z-index: 47;
+                text-align: left;
+
+                .image-inner3{
+                    width: 40%;
+                }
+            }
+
+            &:nth-child(5) {
+                z-index: 46;
+                text-align: right;
+
+                .image-inner3{
+                    width: 40%;
+                }
+            }
+
+            &:nth-child(6) {
+                z-index: 45;
+                text-align: left;
+
+                .image-inner3{
+                    width: 30%;
+                }
+            }
+
+            &:nth-child(7) {
+                z-index: 44;
+                text-align: right;
+
+                .image-inner3{
+                    width: 30%;
+                }
+            }
+
+            &:nth-child(8) {
+                z-index: 43;
+                text-align: left;
+
+                .image-inner3{
+                    width: 25%;
+                }
+            }
+
+            &:nth-child(9) {
+                z-index: 42;
+                text-align: right;
+
+                .image-inner3{
+                    width: 25%;
+                }
+            }
+
+            &:nth-child(10) {
+                z-index: 41;
+                text-align: left;
+
+                .image-inner3{
+                    width: 25%;
+                }
+            }
+
+            &:nth-child(11) {
+                z-index: 40;
+                text-align: right;
+
+                .image-inner3{
+                    width: 25%;
+                }
+            }
+
+            img{
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        &.active{
+            .image{
+
+
+                &:nth-child(2) {
+                    @include mkdTransform(translateX(-20%) translateY(-12%));
+                }
+
+                &:nth-child(3) {
+                    @include mkdTransform(translateX(20%) translateY(-12%));
+                }
+
+                &:nth-child(4) {
+                    @include mkdTransform(translateX(-40%) translateY(-15%));
+                }
+
+                &:nth-child(5) {
+                    @include mkdTransform(translateX(40%) translateY(-15%));
+                }
+
+                &:nth-child(6) {
+                    @include mkdTransform(translateX(-60%) translateY(-18%));
+                }
+
+                &:nth-child(7) {
+                    @include mkdTransform(translateX(60%) translateY(-18%));
+                }
+
+                &:nth-child(8) {
+                    @include mkdTransform(translateX(-80%) translateY(-21%));
+                }
+
+                &:nth-child(9) {
+                    @include mkdTransform(translateX(80%) translateY(-21%));
+                }
+
+                &:nth-child(10) {
+                    @include mkdTransform(translateX(-100%) translateY(-24%));
+                }
+
+                &:nth-child(11) {
+                    @include mkdTransform(translateX(100%) translateY(-24%));
+                }
+            }
+        }
+
+    }
+}

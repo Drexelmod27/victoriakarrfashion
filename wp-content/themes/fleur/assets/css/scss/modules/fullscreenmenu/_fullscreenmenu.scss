@@ -1,0 +1,567 @@
+/* ==========================================================================
+# Fullscreen menu style - begin
+========================================================================== */
+
+.mkd-dark-header.mkd-header-style-on-scroll .mkd-page-header .mkd-fullscreen-menu-opener:not(.opened) .mkd-line,
+.mkd-dark-header .mkd-top-bar .mkd-fullscreen-menu-opener:not(.opened) .mkd-line {
+	background-color: $header-dark-color !important;
+}
+
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header) .mkd-fullscreen-menu-opener {
+	color: $header-dark-color !important;
+
+	.mkd-fullscreen-menu-opener-icon {
+		color: $header-dark-color !important;
+	}
+
+	span {
+		color: $header-dark-color !important;
+	}
+}
+
+.mkd-light-header.mkd-header-style-on-scroll .mkd-page-header .mkd-fullscreen-menu-opener:not(.opened) .mkd-line,
+.mkd-light-header .mkd-top-bar .mkd-fullscreen-menu-opener:not(.opened) .mkd-line {
+	background-color: $header-light-color !important;
+}
+
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header) .mkd-fullscreen-menu-opener:not(.opened) {
+	color: $header-light-color !important;
+
+	.mkd-fullscreen-menu-opener-icon {
+		color: $header-light-color !important;
+	}
+
+	span {
+		color: $header-light-color !important;
+	}
+}
+
+.mkd-fullscreen-menu-opener {
+	font-size: 16px;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	@include mkdTransition(all .2s);
+	color: #3b3b3b;
+	width: 24px;
+	vertical-align: baseline;
+
+	span {
+		color: #3b3b3b;
+	}
+
+	.mkd-fullscreen-menu-opener-icon {
+		display: inline-block;
+		line-height: inherit;
+		vertical-align: middle;
+		text-align: center;
+		width: 100%;
+		height: 25%;
+		color: #3b3b3b;
+		position: relative;
+		top: -3px; //because of the border bottom on lines
+
+		.mkd-fsm-first-line,
+		.mkd-fsm-second-line,
+		.mkd-fsm-third-line {
+			position: absolute;
+			top: 45%;
+			left: 0;
+			width: 100%;
+			height: 0;
+			border-bottom: 2px solid;
+
+			@include mkdTransition(all 0.2s ease-in-out);
+		}
+
+		.mkd-fsm-first-line {
+			width: 14px;
+			@include mkdTransform(translateY(-5px));
+		}
+
+		.mkd-fsm-second-line {
+			width: 21px;
+		}
+
+		.mkd-fsm-third-line {
+			width: 24px;
+			@include mkdTransform(translateY(5px));
+		}
+
+	}
+}
+
+.mkd-fullscreen-menu-opener {
+	&:hover {
+		.mkd-fsm-first-line {
+			width: 24px;
+		}
+
+		.mkd-fsm-second-line {
+			width: 24px;
+		}
+	}
+
+	&.opened {
+		color: $first-main-color;
+
+		.mkd-fsm-third-line {
+			width: 18px;
+			border-bottom: 1px solid;
+			top: 0;
+			@include mkdTransform(rotate(-45deg))
+		}
+
+		.mkd-fsm-second-line {
+			opacity: 0;
+		}
+
+		.mkd-fsm-first-line {
+			width: 18px;
+			top: 0;
+			border-bottom: 1px solid;
+			@include mkdTransform(rotate(45deg))
+		}
+	}
+}
+
+.mkd-fullscreen-menu-opened {
+
+	.mkd-top-bar,
+	#multiscroll-nav {
+		visibility: hidden;
+	}
+
+	.mkd-logo-wrapper a img {
+		&.mkd-normal-logo {
+			opacity: 1 !important;
+		}
+
+		&.mkd-dark-logo, &.mkd-light-logo {
+			opacity: 0;
+		}
+	}
+
+	.mkd-fullscreen-menu-opener {
+		visibility: visible;
+	}
+}
+
+.mkd-fullscreen-menu-holder-outer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden !important;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 105; /* this has to be between header z-index and content z-index */
+}
+
+.mkd-fullscreen-menu-holder {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#fff, 0.9);
+	display: table;
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	background-size: cover;
+}
+
+.mkd-fullscreen-menu-holder-inner {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 50px 0px;
+}
+
+.touch {
+
+	.mkd-fullscreen-menu-holder-outer {
+		display: none;
+	}
+
+	.mkd-fullscreen-menu-opened .mkd-fullscreen-menu-holder-outer {
+		display: block;
+	}
+
+}
+
+.mkd-fullscreen-logo-wrapper {
+	margin-bottom: 60px;
+	text-align: center;
+
+	a {
+		display: inline-block;
+		max-width: 100%;
+		position: relative;
+		vertical-align: middle;
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+}
+
+.mkd-fullscreen-menu {
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+	text-align: left;
+
+	ul {
+		position: relative;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			@include mkdTransition(opacity 0.2s ease);
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			a {
+				font-family: $default-font-family;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 75px;
+				letter-spacing: 0.7px;
+				color: $first-main-color;
+				padding: 0px;
+				display: block;
+				position: relative;
+				text-decoration: none;
+				text-transform: uppercase;
+				cursor: pointer;
+				@include mkdTransition(color 0.15s ease-out);
+
+				@include mac {
+					line-height: 54px;
+				}
+
+			}
+		}
+
+		li ul li a {
+			font-size: 20px;
+			line-height: 1.8em;
+		}
+
+		li ul li ul li a {
+			font-size: 15px;
+		}
+
+	}
+
+	> ul {
+		display: block;
+	}
+
+	ul.sub_menu {
+		display: none;
+	}
+
+}
+
+.mkd-fullscreen-below-menu-widget-holder {
+	position: fixed;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.mkd-fullscreen-above-menu-widget-holder {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+/* Fullscreen general style - end
+========================================================================== */
+
+/* Fullscreen fade animations general - begin
+========================================================================== */
+
+@-webkit-keyframes fade_out {
+	0% {
+		opacity: 1;
+		visibility: visible
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden
+	}
+}
+
+@-moz-keyframes fade_out {
+	0% {
+		opacity: 1;
+		visibility: visible
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden
+	}
+}
+
+@keyframes fade_out {
+	0% {
+		opacity: 1;
+		visibility: visible
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden
+	}
+}
+
+@-webkit-keyframes fade_in {
+	0% {
+		opacity: 0;
+		visibility: hidden
+	}
+	100% {
+		opacity: 1;
+		visibility: visible
+	}
+}
+
+@-moz-keyframes fade_in {
+	0% {
+		opacity: 0;
+		visibility: hidden
+	}
+	100% {
+		opacity: 1;
+		visibility: visible
+	}
+}
+
+@keyframes fade_in {
+	0% {
+		opacity: 0;
+		visibility: hidden
+	}
+	100% {
+		opacity: 1;
+		visibility: visible
+	}
+}
+
+.mkd-fade-push-text-right .mkd-fullscreen-menu-holder-outer,
+.mkd-fade-push-text-top .mkd-fullscreen-menu-holder-outer,
+.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden !important;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: fixed;
+	z-index: 105;
+	opacity: 0;
+}
+
+.mkd-fullscreen-fade-out .mkd-fullscreen-menu-holder-outer {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: fade_out .25s linear both;
+	animation: fade_out .25s linear both;
+}
+
+.mkd-fullscreen-menu-opened.mkd-fullscreen-fade-in .mkd-fullscreen-menu-holder-outer {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: fade_in .7s cubic-bezier(0.175, 0.885, 0.32, 1) both;
+	animation: fade_in .7s cubic-bezier(0.175, 0.885, 0.32, 1) both;
+}
+
+/* Fullscreen fade animations general - end
+========================================================================== */
+
+/* Fullscreen animation push text right - begin
+========================================================================== */
+
+@-webkit-keyframes push_text_right {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-60px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes push_text_right {
+	0% {
+		opacity: 0;
+		-moz-transform: translateX(-60px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateX(0);
+	}
+}
+
+@keyframes push_text_right {
+	0% {
+		opacity: 0;
+		transform: translateX(-60px)
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+@-webkit-keyframes push_nav_right {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-60px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes push_nav_right {
+	0% {
+		opacity: 0;
+		-moz-transform: translateX(-60px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateX(0);
+	}
+}
+
+@keyframes push_nav_right {
+	0% {
+		opacity: 0;
+		transform: translateX(-60px)
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-right .mkd-fullscreen-menu-holder-outer nav > ul > li > a,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder > div,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder > div {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	@include mkdAnimation(push_text_right .4s cubic-bezier(0.175, 0.885, 0.32, 1) both);
+}
+
+.mkd-fade-push-text-right.mkd-push-nav-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fade-push-text-right.mkd-push-nav-right .mkd-fullscreen-menu-holder-outer nav,
+.mkd-fade-push-text-right.mkd-push-nav-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder,
+.mkd-fade-push-text-right.mkd-push-nav-right .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	@include mkdTransition(all .75s ease-out);
+}
+
+/* Fullscreen animation push text right - end
+========================================================================== */
+
+/* Fullscreen animation push text top - begin
+========================================================================== */
+
+@-webkit-keyframes push_text_top {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(60px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes push_text_top {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(60px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@keyframes push_text_top {
+	0% {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0)
+	}
+}
+
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-top .mkd-fullscreen-menu-holder-outer nav > ul > li > a,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder > div,
+.mkd-fullscreen-menu-opened.mkd-fade-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder > div {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	@include mkdAnimation(push_text_top .4s ease-out both .5s);
+}
+
+.mkd-fade-push-text-top.mkd-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fade-push-text-top.mkd-push-text-top .mkd-fullscreen-menu-holder-outer nav,
+.mkd-fade-push-text-top.mkd-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder,
+.mkd-fade-push-text-top.mkd-push-text-top .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	@include mkdTransition(all .3s ease-out);
+}
+
+/* Fullscreen animation push text top - end
+========================================================================== */
+
+/* Fullscreen animation fade text scaledown - begin
+========================================================================== */
+
+.mkd-fullscreen-menu-opened.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fullscreen-menu-opened.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer nav,
+.mkd-fullscreen-menu-opened.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder,
+.mkd-fullscreen-menu-opened.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	opacity: 1;
+	@include mkdTransform(scale(1));
+	@include mkdTransition(all .25s linear 0.1s);
+}
+
+.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-logo-wrapper,
+.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer nav,
+.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-below-menu-widget-holder,
+.mkd-fade-text-scaledown .mkd-fullscreen-menu-holder-outer .mkd-fullscreen-above-menu-widget-holder {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	opacity: 0;
+	@include mkdTransform(scale(1.1));
+	@include mkdTransition(all .25s linear 0.1s);
+}
+
+/* Fullscreen animation fade text scaledown - end
+========================================================================== */
+
+/* ==========================================================================
+# Fullscreen menu style - end
+========================================================================== */

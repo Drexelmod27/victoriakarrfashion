@@ -1,0 +1,90 @@
+.mkd-header-box{
+    .mkd-top-bar {
+        height: 47px;
+    }
+
+    .mkd-page-header {
+
+        .mkd-menu-area {
+            height: 85px;
+            @include mkdBoxSizing(border-box);
+
+            .mkd-logo-wrapper a {
+                max-height: 76px; //85*0.9
+            }
+
+            .mkd-vertical-align-containers {
+                box-sizing: initial;
+                margin: 0 -50px;
+                padding: 0 50px !important;
+                background-color: #fff;
+
+                .mkd-position-left-inner {
+                    height: 100%;
+                }
+            }
+
+            .mkd-main-menu-widget-area {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }
+
+            .mkd-main-menu-widget-area-inner {
+                height: 100%;
+            }
+
+            .mkd-right-from-main-menu-widget {
+                display: table;
+                float: left;
+                padding: 0 10px;
+                position: relative;
+                vertical-align: middle;
+                height: 100%;
+
+				&.widget_mkd_woocommerce_dropdown_cart {
+					padding-right: 16px;
+				}
+
+                &:first-child {
+                    padding-left: 3px;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                .mkd-right-from-main-menu-widget-inner {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+            }
+        }
+    }
+
+    .mkd-drop-down .wide .second > .inner > ul {
+        width: 1200px;
+    }
+
+    &.mkd-grid-1000 .mkd-drop-down .wide .second > .inner > ul {
+        width: $grid-width-1000+100;
+    }
+
+    &.mkd-grid-800 .mkd-drop-down .wide .second > .inner > ul {
+        width: $grid-width-800+100;
+    }
+
+}
+@media only screen and (min-width: 1400px) {
+	.mkd-header-box.mkd-grid-1300 .mkd-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1300+100;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	.mkd-header-box.mkd-grid-1200 .mkd-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1200+100;
+	}
+}
+

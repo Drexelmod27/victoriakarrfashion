@@ -1,0 +1,15 @@
+@include ipad-landscape {
+    .mkd-product-slider {
+        width: 100%;
+
+        & > .woocommerce {
+            margin: 0 !important;
+        }
+        .products > li.product {
+            .mkd-woo-product-info-holder,
+            .mkd-btn {
+                opacity: 1 !important;
+            }
+        }
+    }
+}

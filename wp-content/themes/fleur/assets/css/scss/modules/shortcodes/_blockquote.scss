@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Blockquote shortcode start styles
+   ========================================================================== */
+blockquote {
+	position: relative;
+	display: block;
+	padding: 13px 0px 13px 11px;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		display: block;
+		left: 11px;
+		position: absolute;
+		bottom: 50%;
+		margin-bottom: 7px;
+		width: 1px;
+		height: 100%;
+		opacity: 0.5;
+		background-color: $first-main-color;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		left: 11px;
+		position: absolute;
+		top: 50%;
+		margin-top: 7px;
+		width: 1px;
+		height: 100%;
+		opacity: 0.5;
+		background-color: $first-main-color;
+	}
+
+	.mkd-blockquote-icon {
+		position: absolute;
+		top: 50%;
+		left: 11px;
+		margin-top: -3px;
+		margin-left: -2px;
+		width: 5px;
+		height: 5px;
+		background-color: $first-main-color;
+		@include mkdTransform(rotate(45deg));
+	}
+
+	.mkd-blockquote-text {
+		display: table-cell;
+		vertical-align: top;
+		color: $second-text-color;
+		line-height: 33px;
+		padding-left: 23px;
+		font-family: $additional-font-family;
+		font-style: italic;
+		text-transform: none;
+	}
+
+}
+
+/* ==========================================================================
+   Blockquote shortcode end styles
+   ========================================================================== */

@@ -1,0 +1,42 @@
+@include ipad-landscape {
+    .cards,
+    .cards .card{
+        height: 50px;
+    }
+
+    .mkd-card-slider-holder-outer {
+        padding-top: 10px;
+        padding-bottom: 100px;
+
+        .controls.bullets{
+            bottom: -83px;
+        }
+    }
+}
+
+@include phone-portrait {
+    .cards,
+    .cards .card{
+        height: 30px;
+    }
+
+    .mkd-card-slider-holder-outer {
+        padding-bottom: 50px;
+
+        .controls.arrows {
+            .button {
+                display: none;
+            }
+        }
+
+        .controls.bullets{
+            bottom: -55px;
+
+            .dots .dots-inner .dot{
+                margin: 0px 3px;
+            }
+        }
+    }
+
+
+}

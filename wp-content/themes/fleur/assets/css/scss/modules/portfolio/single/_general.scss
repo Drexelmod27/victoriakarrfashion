@@ -1,0 +1,274 @@
+@import 'small-images';
+@import 'small-slider';
+@import 'big-images';
+@import 'big-slider';
+@import 'gallery';
+@import 'masonry';
+
+.mkd-portfolio-single-holder {
+	.mkd-portfolio-single-media {
+		a {
+			display: block;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	.mkd-portfolio-item-categories {
+		margin-top: 8px;
+	}
+
+	.mkd-portfolio-item-category {
+		color: $second-text-color;
+		text-transform: capitalize;
+	}
+
+	.mkd-portfolio-item-content {
+		margin-top: 11px;
+		margin-bottom: 41px;
+	}
+
+	.mkd-portfolio-info-item {
+		margin-top: -6px;
+
+		&.mkd-portfolio-date h6 {
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		&.mkd-portfolio-date p {
+			display: inline-block;
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.mkd-portfolio-author-box {
+		border: 1px solid #ebebeb;
+		padding: 34px 37px 51px;
+	}
+
+	.mkd-portfolio-item-social {
+		padding-top: 5px;
+		position: relative;
+
+		.mkd-social-share-holder {
+			display: inline-block;
+		}
+	}
+
+	.mkd-portfolio-author-holder {
+		.mkd-author-description-image {
+			display: inline-block;
+			vertical-align: middle;
+			padding: 2px;
+			border-radius: 50%;
+			border: 2px dotted #ababab;
+
+			img {
+				display: block;
+				width: 69px;
+				border-radius: 50%;
+			}
+		}
+
+		.mkd-author-name-position {
+			display: inline-block;
+			vertical-align: bottom;
+			padding: 0 0 5px 4px;
+		}
+
+		.mkd-author-position {
+			color: $default-text-color;
+		}
+
+		.mkd-author-description-text-holder {
+			margin-top: 20px;
+			margin-bottom: 19px;
+			line-height: 30px;
+		}
+
+	}
+
+	.mkd-portfolio-single-likes {
+		.mkd-like {
+			position: absolute;
+			left: 0;
+			top: 15px;
+			color: #808080;
+			font-size: 16px;
+
+			&:before {
+				content: '\e030';
+				font-family: 'ElegantIcons';
+				color: inherit;
+				margin-right: 6px;
+			}
+
+			&.liked:before {
+				content: '\e089';
+				margin-right: 6px;
+			}
+		}
+	}
+
+	.mkd-portfolio-single-nav {
+		padding: 35px 0;
+		position: relative;
+		border-bottom: 1px solid #eee;
+		margin-top: 95px;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+
+		.mkd-icon-stack {
+			display: block;
+			font-size: 18px;
+			color: $default-text-color;
+		}
+
+		.mkd-portfolio-single-prev {
+			float: left;
+
+			& > a {
+				display: block;
+			}
+
+			.mkd-icon-stack {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.mkd-single-prev-label {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 13px;
+				padding-left: 3px;
+				color: $third-text-color;
+				position: relative;
+				top: -2px;
+			}
+		}
+		.mkd-portfolio-single-next {
+			float: right;
+
+			.mkd-icon-stack {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.mkd-single-next-label {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 13px;
+				padding-right: 3px;
+				color: $third-text-color;
+				position: relative;
+				top: -2px;
+			}
+		}
+
+		.mkd-portfolio-back-btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-size: 20px;
+
+			@include mkdTransform(translate(-50%, -50%));
+
+			a {
+				color: #999;
+			}
+		}
+	}
+
+	.mkd-portfolio-video-lightbox {
+		position: relative;
+		display: block;
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	.mkd-portfolio-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: #fff;
+
+		.mkd-portfolio-play-icon {
+			position: absolute;
+			font-size: 20px;
+			left: 50%;
+			top: 50%;
+
+			@include mkdTransform(translateX(-50%) translateY(-50%));
+		}
+	}
+}
+
+.mkd-ptf-item-hover-holder {
+
+	.mkd-ptf-portfolio-overlay-icon {
+		position: absolute;
+		z-index: 3;
+		opacity: 0;
+		font-size: 26px;
+		top: 50%;
+		left: 50%;
+
+		@include mkdTransition(opacity 0.2s ease-out);
+		@include mkdTransform(translateX(-50%) translateY(-50%));
+	}
+
+	&:hover .mkd-ptf-portfolio-overlay-icon {
+		opacity: 1;
+	}
+
+	.mkd-ptf-portfolio-overlay-bg {
+		position: absolute;
+		display: block;
+		background-color: rgba(255, 255, 255, 0.98);
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		@include mkdTransition(opacity 0.2s ease-out)
+	}
+
+	&:hover .mkd-ptf-portfolio-overlay-bg {
+		opacity: 1;
+	}
+}
+
+.single.single-portfolio-item {
+
+	.mkd-content .mkd-content-inner > .mkd-container > .mkd-container-inner,
+	.mkd-content .mkd-content-inner > .mkd-full-width > .mkd-full-width-inner {
+		padding: 78px 0 95px;
+	}
+
+	.mkd-two-columns-66-33 {
+		.mkd-column2 .mkd-column-inner {
+			padding: 0 25% 0 0;
+		}
+
+		.mkd-column1 {
+			float: right;
+
+			.mkd-column-inner {
+				padding: 0;
+			}
+		}
+	}
+}

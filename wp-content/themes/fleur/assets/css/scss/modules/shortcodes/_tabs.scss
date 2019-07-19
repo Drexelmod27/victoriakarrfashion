@@ -1,0 +1,287 @@
+/* ==========================================================================
+# Tabs style - begin
+========================================================================== */
+.mkd-tabs {
+
+	.mkd-tab-container {
+		position: relative;
+		background-size: contain;
+		background-position: 100% 50%;
+		background-repeat: no-repeat;
+
+		@include mkdBoxSizing(border-box);
+		opacity: 0;
+		@include mkdTransition(opacity .4s ease);
+		&.mkd-visible {
+			opacity: 1;
+		}
+	}
+
+	.mkd-tabs-nav {
+		display: block;
+		position: relative;
+		list-style: none outside none;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+		border-bottom: 1px solid #f2f2f2;
+
+		li a {
+			display: block;
+			padding: 18px 30px;
+			color: $default-text-color;
+			background-color: #ffffff;
+			font-weight: 400;
+			font-family: $additional-font-family;
+			font-style: italic;
+
+			@include mkdBoxSizing(border-box);
+			@include mkdTransition(color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out);
+
+			.mkd-tab-title-subtitle, .mkd-tab-title, .mkd-tab-subtitle {
+				display: block;
+			}
+			.mkd-tab-subtitle {
+				font-size: 16px;
+				color: #999999;
+				margin-top: 6px;
+			}
+		}
+
+		li.ui-state-active a {
+			position: relative;
+			z-index: 20;
+			color: $first-main-color;
+		}
+
+		li:hover a {
+			color: $first-main-color;
+		}
+
+	}
+
+	%linecontent {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	@include keyframes(stretchOutVertical) {
+		0%, 100% {
+			top: 0;
+			height: 100%;
+		}
+
+		50% {
+			top: -50%;
+			height: 150%;
+		}
+	}
+
+	@include keyframes(stretchOutHorizontal) {
+		0%, 100% {
+			left: 0;
+			width: 100%;
+		}
+
+		50% {
+			left: -50%;
+			width: 150%;
+		}
+	}
+
+}
+
+/* Horizontal tabs styles
+   ========================================================================== */
+.mkd-tabs.mkd-horizontal {
+
+	.mkd-tabs-nav li {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			height: 1px;
+			width: calc(50% - 7px);
+			opacity: 0.5;
+			right: 0;
+			bottom: -1px;
+			background-color: transparent;
+
+			@include mkdTransition(background-color 0.2s ease);
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			height: 1px;
+			width: calc(50% - 7px);
+			opacity: 0.5;
+			left: 0;
+			bottom: -1px;
+			background-color: transparent;
+
+			@include mkdTransition(background-color 0.2s ease);
+		}
+
+		a {
+			background-color: transparent;
+			font-size: 14px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				bottom: -3px;
+				left: 50%;
+				margin-left: -2.5px;
+				background-color: transparent;
+				@include mkdTransform(rotate(45deg));
+
+				@include mkdTransition(background-color 0.2s ease);
+			}
+		}
+
+		&:hover, &.ui-state-active {
+			&:after, &:before {
+				background-color: $first-main-color;
+			}
+
+			a:after {
+				background-color: $first-main-color;
+			}
+		}
+	}
+
+	.mkd-tabs-nav li {
+		display: table-cell;
+		vertical-align: middle;
+		position: relative;
+
+		a {
+			padding: 12px 21px;
+			border-left: 0;
+		}
+	}
+
+	.mkd-tab-container {
+		padding: 35px 0;
+		top: -1px;
+		position: relative;
+		z-index: 10;
+	}
+
+}
+
+/* Vertical tabs styles
+   ========================================================================== */
+.mkd-tabs.mkd-vertical {
+
+	.mkd-tabs-nav {
+		float: left;
+		width: 32%;
+
+		@include mkdBoxSizing(border-box);
+
+		li {
+			display: block;
+			border-bottom: 1px solid #f2f2f2;
+			position: relative;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			a {
+				border-bottom: 0;
+				padding: 27px 32px;
+
+				.mkd-tab-title {
+					font-size: 22px;
+				}
+
+				&:after {
+					content: '';
+					background: #ebebeb;
+					position: absolute;
+					width: 5px;
+					height: 100%;
+					left: 0;
+					top: 0;
+				}
+			}
+
+			&.ui-state-active, &.ui-state-hover {
+				a:after {
+					background-color: $first-main-color;
+				}
+			}
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.mkd-tab-container {
+		float: left;
+		padding: 0 45px 10px 45px;
+		width: 68%;
+
+		@include mkdBoxSizing(border-box);
+	}
+
+	&.mkd-vertical-nav-width-small {
+		.mkd-tabs-nav {
+			width: 22.92%;
+		}
+
+		.mkd-tab-container {
+			width: 77.08%;
+		}
+	}
+
+}
+
+/* Tabs with icon and text styles start
+   ========================================================================== */
+
+.mkd-tabs.mkd-tab-text-icon .mkd-tabs-nav li a {
+
+	.mkd-tab-text-after-icon {
+		padding-left: 10px;
+		@include mkdTransition(initial);
+	}
+	.mkd-icon-frame {
+		float: left;
+		margin-left: -7px;
+	}
+	.mkd-tab-title-subtitle {
+		padding-left: 20px;
+	}
+}
+
+/* Tabs with icon styles - start
+   ========================================================================== */
+
+.mkd-tabs.mkd-tab-icon .mkd-tabs-nav li a {
+	i,
+	span {
+		@include mkdTransition(initial);
+	}
+
+	.mkd-icon-frame {
+		display: inline-block;
+		min-width: 20px;
+	}
+
+}
+
+/* ==========================================================================
+# Tabs style - end
+========================================================================== */

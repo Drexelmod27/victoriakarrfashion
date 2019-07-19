@@ -1,0 +1,98 @@
+.mkd-blog-holder {
+
+	&.mkd-blog-single {
+
+		&.mkd-blog-standard {
+
+			.format-quote, .format-link {
+				.mkd-content-category-share-holder {
+					padding: 32px 36px 0 32px;
+					background-color: #fff;
+
+					@include mkdBoxShadow($shadow);
+				}
+
+				.mkd-category-share-holder {
+					background-color: #fff;
+				}
+
+			}
+
+			.format-link {
+
+				.mkd-post-content {
+					position: relative;
+
+					.mkd-post-image-text-holder {
+						position: relative;
+						background-size: cover;
+
+						.mkd-post-title {
+							@include mkdTransition(opacity 0.25s ease-in-out);
+
+							a:before {
+								content: '';
+								position: absolute;
+								top: 0;
+								left: 0;
+								height: 100%;
+								width: 100%;
+							}
+						}
+
+						&:hover {
+							.mkd-post-title {
+								opacity: 0.85;
+							}
+						}
+					}
+
+					.mkd-post-text {
+						box-shadow: none;
+						padding-bottom: 130px;
+					}
+
+					.mkd-post-info-date {
+						position: static;
+					}
+
+					.mkd-post-text {
+					}
+
+					.mkd-post-mark {
+						position: absolute;
+						bottom: 23px;
+						right: 28px;
+						font-size: 36px;
+						color: $first-main-color;
+					}
+				}
+			}
+
+			article.format-quote {
+				.mkd-post-title h1 {
+					font-family: $additional-font-family;
+					font-style: italic;
+					font-weight: 400;
+					margin-bottom: 6px;
+					line-height: 46px;
+					margin-top: 11px;
+					font-size: 25px;
+					text-transform: none;
+				}
+
+				.mkd-quote_author {
+					text-transform: none;
+					color: $default-text-color;
+				}
+
+				.mkd-post-content .mkd-post-text {
+					box-shadow: none;
+					background-size: cover;
+					background-position: center;
+					padding: 41px 36px 47px;
+				}
+			}
+		}
+	}
+}

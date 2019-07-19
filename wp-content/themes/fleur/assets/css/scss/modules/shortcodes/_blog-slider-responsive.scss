@@ -1,0 +1,18 @@
+@media only screen and (max-width: map-get($breakpoints, phone-portrait)) {
+	.mkd-blog-slider-holder .mkd-post-content .mkd-categories-date {
+
+		.mkd-categories-list {
+			width: 50%;
+		}
+
+		.mkd-post-info {
+			float: left;
+			width: 50%;
+		}
+	}
+
+	.mkd-blog-slider-holder .slick-slide {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

@@ -1,0 +1,128 @@
+.mkd-iwt {
+	$icon-tiny-content-padding: 45px;
+	$icon-small-content-padding: 80px;
+	$icon-medium-content-padding: 110px;
+	$icon-large-content-padding: 150px;
+	$icon-huge-content-padding: 180px;
+	$title-margin-bottom: 12px;
+
+	.mkd-iwt-link {
+		margin-top: 5px;
+		display: inline-block;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #3b3b3b;
+		font-weight: 700;
+		font-family: $default-font-family;
+		position: relative;
+		@include mkdTransition(opacity .2s ease-out);
+
+		&:after {
+			content: '\45';
+			font-family: 'ElegantIcons';
+			position: absolute;
+			top: 0;
+			right: -20px;
+			@include mkdTransition(right .25s);
+		}
+
+		&:hover {
+			opacity: .85;
+			&:after {
+				right: -23px;
+			}
+		}
+	}
+	.mkd-iwt-custom-icon {
+		display: inline-block;
+		line-height: 0;
+	}
+
+	&.mkd-iwt-icon-top {
+		text-align: center;
+	}
+
+	&.mkd-iwt-icon-left,
+	&.mkd-iwt-icon-left-from-title {
+		text-align: left;
+	}
+
+	&:not(.mkd-iwt-left-from-title) {
+		.mkd-iwt-title-holder {
+			margin-bottom: 21px;
+			text-transform: capitalize;
+
+			h5 {
+				margin-bottom: 12px;
+				margin-top: 11px;
+			}
+		}
+	}
+
+	&.mkd-iwt-icon-left {
+		.mkd-iwt-icon-holder {
+			float: left;
+			margin-top: -10px;
+		}
+
+		&.mkd-iwt-icon-tiny .mkd-iwt-content-holder {
+			padding-left: $icon-tiny-content-padding;
+		}
+
+		&.mkd-iwt-icon-small .mkd-iwt-content-holder {
+			padding-left: $icon-small-content-padding;
+		}
+
+		&.mkd-iwt-icon-medium .mkd-iwt-content-holder {
+			padding-left: $icon-medium-content-padding;
+		}
+
+		&.mkd-iwt-icon-large .mkd-iwt-content-holder {
+			padding-left: $icon-large-content-padding;
+		}
+
+		&.mkd-iwt-icon-huge .mkd-iwt-content-holder {
+			padding-left: $icon-huge-content-padding;
+		}
+	}
+
+	&.mkd-iwt-icon-right {
+		text-align: right;
+
+		.mkd-iwt-icon-holder {
+			float: right;
+		}
+
+		&.mkd-iwt-icon-tiny .mkd-iwt-content-holder {
+			padding-right: $icon-tiny-content-padding;
+		}
+
+		&.mkd-iwt-icon-small .mkd-iwt-content-holder {
+			padding-right: $icon-small-content-padding;
+		}
+
+		&.mkd-iwt-icon-medium .mkd-iwt-content-holder {
+			padding-right: $icon-medium-content-padding;
+		}
+
+		&.mkd-iwt-icon-large .mkd-iwt-content-holder {
+			padding-right: $icon-large-content-padding;
+		}
+
+		&.mkd-iwt-icon-huge .mkd-iwt-content-holder {
+			padding-right: $icon-huge-content-padding;
+		}
+	}
+
+	&.mkd-iwt-left-from-title {
+		.mkd-iwt-icon-title-holder {
+			margin-bottom: $title-margin-bottom;
+		}
+
+		.mkd-iwt-icon-holder,
+		.mkd-iwt-title-holder {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

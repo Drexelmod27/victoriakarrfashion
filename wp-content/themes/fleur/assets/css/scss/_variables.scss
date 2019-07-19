@@ -1,0 +1,70 @@
+$grid-width: 1100px;
+$grid-width-laptop-wide-landscape: 1100px;
+$grid-width-laptop-landscape: 950px;
+$grid-width-vertical-menu-laptop-landscape: 850px;
+$grid-width-ipad-landscape: 768px;
+$grid-width-ipad-portrait: 600px;
+$grid-width-phone-landscape: 420px;
+$grid-width-phone-portrait: 300px;
+$grid-width-smaller-phone-portrait: calc(100% - 40px);
+
+$grid-width-boxed: 1150px;
+$grid-width-laptop-landscape-boxed: 1000px;
+$grid-width-ipad-landscape-boxed: 818px;
+$grid-width-ipad-portrait-boxed: 650px;
+$grid-width-phone-landscape-boxed: 470px;
+$grid-width-phone-portrait-boxed: 350px;
+$grid-width-smaller-phone-portrait-boxed: 96%;
+
+$grid-width-1300: 1300px;
+$grid-width-1200: 1200px;
+$grid-width-1000: 1000px;
+$grid-width-800: 800px;
+
+$first-main-color: #4a3e5a;
+$default-background-color: #fff;
+
+$header-light-color: #fff;
+$header-dark-color: #000;
+
+//typography variables
+$default-font-family: 'Raleway', sans-serif;
+$additional-font-family: 'Playfair Display', serif;
+$default-text-color: #808080;
+$second-text-color: #656565;
+$third-text-color: #7e7e7e;
+$default-text-size: 15px;
+$default-text-line-height: 1.7333em;
+$auto-line-height: 1.2em;
+$elements-box-shadow-color: rgba(0, 0, 0, 0.08);
+$shop-price-color: #c0c0c0;
+
+$breakpoints: (
+		vertical-menu-laptop-wide-landscape: 1650px,
+		vertical-menu-laptop-landscape: 1490px,
+		large-laptop: 1400px,
+		vertical-menu-ipad-landscape: 1314px,
+		mac: 1280px,
+		laptop-landscape: 1200px,
+		ipad-landscape-plus-pixel: 1025px,
+		ipad-landscape: 1024px,
+		ipad-portrait: 768px,
+		phone-landscape: 600px,
+		phone-portrait: 480px,
+		smaller-phone-portrait: 300px
+);
+
+$vertical-menu-width: 260px;
+
+// social share colors
+$linkedin-color: $first-main-color;
+$googleplus-color: $first-main-color;
+$tumblr-color: $first-main-color;
+$pinterest-color: $first-main-color;
+$facebook-color: $first-main-color;
+$instagram-color: $first-main-color;
+$twitter-color: $first-main-color;
+$vimeo-color: $first-main-color;
+
+// box shadow
+$shadow: 1px 1px 3px #eee;

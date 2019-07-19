@@ -1,0 +1,95 @@
+.mkd-box-item-holder {
+	padding: 36px 30px 46px;
+
+	&.mkd-box-shadow:not(.mkd-box-flip) {
+		@include mkdBoxShadow($shadow);
+	}
+
+	&.mkd-box-flip {
+		&.mkd-box-shadow {
+			@include mkdBoxShadow(none);
+
+			.mkd-box-item-front,
+			.mkd-box-item-back {
+				@include mkdBoxShadow($shadow); //box shadow moved to front and back items
+			}
+		}
+
+		position: relative;
+		-webkit-perspective: 1000;
+		-moz-perspective: 1000px;
+		perspective: 1000px;
+		background-color: transparent;
+		padding:0;
+
+		%absolute {
+			position: absolute;
+			top:0;
+			left:0;
+			height: 100%;
+			width: 100%;
+			z-index: 100;
+		}
+
+		>a {
+			@extend %absolute;
+		}
+
+		>div {
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			outline: 1px solid transparent; //moz pixelation fix
+		}
+
+		.mkd-box-item-front {
+			opacity: 1;
+			@include mkdTransform(rotateY(0deg));
+			@include mkdTransition(all .6s cubic-bezier(0.25, 0.1, 0.11, 1.33));
+			padding: 47px 30px 40px;
+		}
+
+		.mkd-box-item-back {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top:0;
+			left: 0;
+		    opacity:0;
+		    @include mkdTransform(rotateY(-180deg));
+		    -webkit-transition: -webkit-transform .6s cubic-bezier(0.25, 0.1, 0.11, 1.33), opacity .35s;
+		    transition: transform .6s cubic-bezier(0.25, 0.1, 0.11, 1.33), opacity .35s;
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		&.mkd-box-light-overlay {
+			.mkd-box-item-back:after {
+				content:'';
+				@extend %absolute;
+				background-color: rgba(255,255,255,.25);
+			}
+		}
+
+		&.mkd-box-dark-overlay {
+			.mkd-box-item-back:after {
+				content:'';
+				@extend %absolute;
+				background-color: rgba(0,0,0,.15);
+			}
+		}
+
+		&.mkd-hovered {
+			.mkd-box-item-front {
+				@include mkdTransform(rotateY(180deg));
+				opacity: 0;
+			}
+			.mkd-box-item-back {
+			    @include mkdTransform(rotateY(0deg));
+			    opacity:1;
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Intro Section shortcode responsive styles start
+============================================================================= */
+
+@include large-laptop { 
+	.mkd-intro-section  {
+		.mkd-intro-logo-holder {
+			margin-top: 5%;
+		}
+	}
+}
+
+@include laptop-landscape {
+	.mkd-intro-section  {
+		.mkd-intro-bottom-row {
+			height: 30%;
+		}
+	}
+}
+
+@include ipad-landscape {
+	.mkd-intro-section {
+		.mkd-intro-top-cell {
+			padding-top: 40px !important; //override enable transparency setting
+			padding-bottom: 0 !important; //override enable transparency setting
+		}
+	}
+}
+
+@include ipad-portrait { 
+	.mkd-intro-section  {
+		.mkd-intro-logo-holder {
+			margin-top: 20%;
+		}
+	}
+}
+
+
+@include phone-landscape {
+	.mkd-intro-section  {
+		.mkd-intro-logo-holder {
+			margin-bottom:30px;
+		}
+
+		.mkd-intro-description {
+			width: 80%;
+			margin-bottom: 30px;
+			font-size: 16px;
+		}
+
+		.mkd-is-button-holder {
+			margin-bottom: 20px;
+		}
+
+		.mkd-is-hero {
+			width: 60%;
+		}
+	}
+}
+
+@include phone-portrait { 
+	.mkd-intro-section  {
+		.mkd-intro-logo-holder {
+			margin-top: 5%;
+		}
+	}
+}
+
+/* ==========================================================================
+   Intro Section shortcode responsive styles end
+============================================================================= */

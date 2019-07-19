@@ -1,0 +1,43 @@
+.mkd-blog-holder.mkd-blog-type-simple {
+	width: 58%;
+	margin: 0 auto;
+
+	article {
+		margin-bottom: 0;
+
+		&.format-quote {
+			padding-top: 48px;
+		}
+
+		.mkd-post-title {
+			font-size: 42px;
+			padding-top: 48px;
+		}
+
+		.mkd-post-text {
+			background-color: transparent;
+
+			.mkd-post-text-inner {
+				padding-bottom: 43px;
+				border-bottom: 1px solid #eeeeee;
+			}
+
+			@include mkdBoxShadow(none);
+		}
+		.mkd-post-excerpt {
+			margin-bottom: 0;
+		}
+
+		&:last-of-type {
+			.mkd-post-text .mkd-post-text-inner {
+				border-bottom: none;
+			}
+		}
+	}
+	.mkd-pagination {
+		padding-left: 36px;
+		padding-right: 36px;
+
+		@include mkdBoxSizing(border-box);
+	}
+}

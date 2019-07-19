@@ -1,0 +1,21 @@
+@include large-laptop {
+	.mkd-zooming-slider-holder {
+		.mkd-zooming-slider-item-content {
+			margin: 15px;
+		}
+	}
+}
+
+@include mac {
+	.mkd-zooming-slider-holder {
+		.mkd-zooming-slider-item-content {
+            margin: 30px;
+		}
+	}
+}
+
+@include ipad-portrait {
+    .mkd-zooming-slider-holder {
+        margin: 0 !important;
+    }
+}

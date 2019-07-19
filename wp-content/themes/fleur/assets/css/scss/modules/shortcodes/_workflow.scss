@@ -1,0 +1,182 @@
+.mkd-workflow {
+	margin-top: 50px;
+	position: relative;
+
+	.main-line {
+		background: #dee0e0;
+		left: 50%;
+		margin-left: -1px;
+		position: absolute;
+		right: 50%;
+		top: 0;
+		height: 100%;
+		width: 2px;
+	}
+
+	.mkd-workflow-item {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 75%;
+		position: relative;
+		padding-bottom: 70px;
+		overflow: hidden;
+
+		&:nth-of-type(2n) {
+			text-align: left;
+
+			.mkd-workflow-item-inner {
+				.mkd-workflow-image {
+					text-align: right;
+				}
+			}
+		}
+
+		&:nth-of-type(2n+1) {
+			text-align: right;
+
+			.mkd-workflow-item-inner {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: reverse;
+				-webkit-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+
+				.mkd-workflow-image {
+					text-align: left;
+				}
+			}
+		}
+
+		.mkd-workflow-item-inner {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			vertical-align: middle;
+
+			.mkd-workflow-image,
+			.mkd-workflow-text {
+				float: left;
+				margin: 0;
+				width: 50%;
+
+				@include mkdBoxSizing(border-box);
+			}
+
+			.mkd-workflow-image {
+				padding: 0px 70px;
+			}
+
+			.mkd-workflow-text {
+				padding: 0px 60px;
+
+				h4 {
+					margin-top: 0;
+					margin-bottom: 0px;
+				}
+
+				p.text {
+					margin-top: 25px;
+				}
+
+				.circle {
+					background: #fff;
+					border: 3px solid #dee0e0;
+					border-radius: 50%;
+					content: "";
+					height: 14px;
+					left: 50%;
+					margin: 0 0 0 -10px;
+					position: absolute;
+					top: 4px;
+					width: 14px;
+				}
+			}
+
+		}
+
+		.line {
+			display: none;
+			background-color: #fff;
+			height: 100%;
+			left: 50%;
+			margin-left: -1px;
+			position: absolute;
+			width: 2px;
+		}
+
+		&:first-of-type .line {
+			display: block;
+			top: 4px;
+			transform: translateY(-100%);
+		}
+
+		&:last-of-type .line {
+			display: block;
+			top: 24px;
+		}
+
+	}
+
+	&.mkd-workflow-animate {
+		@include mkdTransform(translateY(100px));
+		opacity: 0;
+		-webkit-transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+		transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+		.main-line {
+			opacity: 0;
+			height: 0;
+			@include mkdTransition(opacity .55s cubic-bezier(0.23, 1, 0.32, 1), height 1.8s ease-out);
+		}
+		.circle {
+			@include mkdTransform(scale(.2));
+			-webkit-transition: -webkit-transform .6s cubic-bezier(0.18, 0.89, 0.32, 1.68) .5s;
+			transition: transform .6s cubic-bezier(0.18, 0.89, 0.32, 1.68) .5s;
+		}
+		.mkd-workflow-item {
+			.mkd-workflow-item-inner {
+				.mkd-workflow-image {
+					opacity: 0;
+					@include mkdTransform(scale(.6));
+					-webkit-transition: -webkit-transform .6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity .3s ease-out;
+					transition: transform .6s cubic-bezier(0.18, 0.89, 0.32, 1), opacity .3s ease-out;
+				}
+				.mkd-workflow-text {
+					h4, p {
+						opacity: 0;
+						@include mkdTransition(opacity .5s cubic-bezier(0.22, 0.61, 0.36, 1) .2s);
+					}
+				}
+			}
+		}
+		&.mkd-appeared {
+			@include mkdTransform(translateY(0));
+			opacity: 1;
+			.main-line {
+				opacity: 1;
+				height: 100%;
+			}
+			.mkd-workflow-item.mkd-appeared {
+				.mkd-workflow-image {
+					opacity: 1;
+					@include mkdTransform(scale(1));
+				}
+				.mkd-workflow-text {
+					h4, p {
+						opacity: 1;
+					}
+				}
+
+			}
+			.circle {
+				@include mkdTransform(scale(1));
+			}
+		}
+	}
+}

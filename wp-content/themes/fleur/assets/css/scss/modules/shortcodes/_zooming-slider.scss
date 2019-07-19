@@ -1,0 +1,135 @@
+.mkd-zooming-slider-holder {
+	opacity: 0;
+
+	@include mkdTransition(opacity 0.2s ease-in-out);
+
+	&.slick-initialized {
+		opacity: 1;
+	}
+
+	.mkd-zooming-slider-item-holder {
+		z-index: 1;
+		position: relative;
+
+		&.slick-current {
+			z-index: 10;
+		}
+	}
+
+	.mkd-zooming-slider-item-content {
+		position: relative;
+		margin: 20px;
+		z-index: 1;
+
+		img {
+			@include mkdTransitionDelay(0);
+			@include mkdTransform(translateZ(0));
+			@include mkdTransition(transform 0.75s cubic-bezier(.19, 1, .22, 1));
+		}
+
+		h4 {
+			margin: 0;
+			position: absolute;
+			bottom: 25px;
+			left: 0px;
+			padding: 0 0 0 20px;
+
+			&.black {
+				color: #000;
+			}
+
+			&.white {
+				color: #fff;
+			}
+
+			a {
+				@include mkdTransition(opacity 0.2s ease);
+			}
+
+			& a:hover {
+				opacity: 0.65;
+				color: inherit;
+			}
+		}
+	}
+
+	.slick-list {
+		padding-top: 33px !important;
+		padding-bottom: 33px !important;
+	}
+
+	.slick-center {
+		.mkd-zooming-slider-item-content {
+			img {
+				@include mkdTransform(scale(1.1) translateZ(0));
+				@include mkdTransitionDelay(0.03s);
+			}
+		}
+	}
+
+	.mkd-zooming-slider-holder .mkd-zooming-slider-item-content h4 {
+		transition: all .15s ease-out;
+	}
+
+	.mkd-zooming-slider-holder .mkd-zooming-slider-item-content:hover h4 {
+		transition: all .25s ease-out;
+		transform: translateY(10px);
+	}
+
+	.slick-slide:not(.slick-center) {
+		h4 {
+			@include mkdTransition(all .15s ease-out);
+		}
+		img {
+			@include mkdTransition(transform .6s cubic-bezier(.19, 1, .22, 1));
+		}
+		&:hover {
+			h4 {
+				@include mkdTransition(all .3s cubic-bezier(0, 0, 0.1, 1.88));
+				@include mkdTransform(translateY(10px));
+			}
+			img {
+				@include mkdTransform(translateZ(0) scale(1.08));
+				@include mkdTransition(transform .7s cubic-bezier(.19, 1, .22, 1));
+			}
+		}
+	}
+
+	.slick-dots {
+		margin: 0;
+
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		button {
+			border: none;
+			background-color: #acacac;
+			margin: 0 5px;
+			padding: 0; //Safari iOS fix
+
+			text-indent: -1000px;
+			overflow: hidden;
+			width: 13px;
+			height: 13px;
+			cursor: inherit;
+			outline: none;
+
+			@include mkdBorderRadius(50%);
+			@include mkdTransition(background-color 0.2s ease-out);
+		}
+
+		.slick-active button,
+		li:hover button {
+			background-color: $first-main-color;
+		}
+	}
+
+	.slick-slide img {
+		display: inline-block;
+	}
+}

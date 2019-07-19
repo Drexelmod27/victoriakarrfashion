@@ -1,0 +1,250 @@
+/* Woocommerce global styles - begin
+========================================================================== */
+.woocommerce-page.woocommerce {
+
+	.woocommerce-message a.button:hover {
+		background-color: #fff !important;
+		border: 2px solid $first-main-color !important;
+		color: $first-main-color !important;
+	}
+
+}
+
+.woocommerce-page nav.woocommerce-MyAccount-navigation li {
+	list-style: none;
+}
+
+/* Woocommerce global styles - end
+========================================================================== */
+
+/* Woocommerce pagination - begin
+========================================================================== */
+
+.woocommerce-pagination {
+	position: relative;
+	vertical-align: middle;
+	width: auto;
+	margin-bottom: 30px;
+	text-align: center;
+
+	.page-numbers {
+		display: inline-block;
+		vertical-align: middle;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			float: left;
+
+			& > a,
+			& > span.current {
+				padding: 0 8px;
+			}
+
+			& > a.next,
+			& > a.prev {
+				-webkit-transition: -webkit-transform 0.15s ease-in-out;
+				-moz-transition: -moz-transform 0.15s ease-in-out;
+				-ms-transition: -ms-transform 0.15s ease-in-out;
+				-o-transition: -o-transform 0.15s ease-in-out;
+				transition: transform 0.15s ease-in-out;
+				font-size: 31px;
+				margin-top: -3px;
+			}
+
+			& > a.next {
+				padding-left: 10px;
+
+				&:hover {
+					@include mkdTransform(translateX(2px));
+				}
+			}
+
+			& > a.prev {
+				padding-right: 10px;
+
+				&:hover {
+					@include mkdTransform(translateX(-2px));
+				}
+			}
+		}
+
+		li > a,
+		li > span {
+			color: $third-text-color;
+			font-weight: 400;
+			font-size: 16px;
+			font-family: $default-font-family;
+
+			@include mkdTransition(0.15s ease-out);
+		}
+
+		li span.current {
+			color: $first-main-color;
+		}
+
+		li a:hover,
+		li span:hover,
+		li span.current:hover {
+			color: $first-main-color;
+		}
+
+	}
+}
+
+/* Woocommerce pagination - end
+========================================================================== */
+
+/* Woocommerce login start - begin
+========================================================================== */
+.woocommerce {
+	.login,
+	.register {
+		margin-bottom: 30px;
+
+		> p:first-of-type {
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 3px;
+		}
+
+		input[type=text],
+		input[type=password],
+		input[type=email] {
+			@include inputStyle();
+
+			margin-bottom: 10px;
+		}
+
+		.mkd-row {
+			@include createGridRow();
+
+			.form-row {
+				@include createGridColumn(6);
+			}
+		}
+
+		.button {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+/* Woocommerce login end - begin
+========================================================================== */
+
+/* Woocommerce quantity buttons - begin
+========================================================================== */
+
+.mkd-woocommerce-page .quantity.mkd-quantity-buttons {
+	display: inline-block;
+	position: relative;
+	margin-right: 24px;
+	height: 41px;
+	top: 2px;
+	width: 55px;
+
+	span.mkd-quantity-minus span {
+		border: 1px solid #ebebeb;
+		position: absolute;
+		color: #242625;
+		font-size: 10px;
+		background-color: #fff;
+		right: -11px;
+		bottom: -1px;
+		padding: 5px;
+		z-index: 10;
+		@include mkdTransition(background-color 0.15s ease-out);
+		cursor: pointer;
+
+		&:hover {
+			background-color: #ebebeb;
+		}
+	}
+
+	span.mkd-quantity-plus span {
+		border: 1px solid #ebebeb;
+		position: absolute;
+		right: -11px;
+		color: #242625;
+		font-size: 10px;
+		background-color: #fff;
+		top: 0;
+		padding: 5px;
+		border-bottom: 0;
+		@include mkdTransition(background-color 0.15s ease-out);
+		cursor: pointer;
+
+		&:hover {
+			background-color: #ebebeb;
+		}
+	}
+
+	.mkd-quantity-input {
+		height: 40px;
+		line-height: 40px;
+		width: 45px;
+		display: inline-block;
+		padding: 0;
+		background-color: #fff;
+		text-align: center;
+		color: #999;
+		font-weight: 400;
+		font-size: 14px;
+		border: 1px solid #ebebeb;
+		border-right: none;
+		font-family: $default-font-family;
+	}
+
+}
+
+.mkd-woocommerce-page .single_variation_wrap .quantity.mkd-quantity-buttons {
+	float: left;
+}
+
+/* Woocommerce quantity buttons - end
+========================================================================== */
+
+/* Woocommerce message - begin
+========================================================================== */
+
+.mkd-woocommerce-page {
+
+	.woocommerce-message,
+	.woocommerce-info,
+	.woocommerce-error {
+		margin-bottom: 74px;
+		position: relative;
+		display: block;
+		padding: 10px 15px 10px 15px;
+		line-height: 40px;
+		border: 1px solid $first-main-color;
+		color: $first-main-color;
+		background-color: #fff;
+		list-style: none;
+
+		a {
+			color: $first-main-color;
+		}
+	}
+
+	.woocommerce-message a {
+		float: right;
+		background-color: $first-main-color;
+		color: #fff;
+		font-size: 10px;
+		line-height: 1.7em;
+		text-align: center;
+		padding: 7px 25px;
+		min-width: 95px;
+		font-weight: 600;
+		top: 2px;
+	}
+}
+
+/* Woocommerce message - end
+========================================================================== */

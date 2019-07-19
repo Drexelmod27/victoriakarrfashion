@@ -1,0 +1,71 @@
+.mkd-working-hours-holder {
+	position: relative;
+	padding: 29px 38px 6px;
+	border: 2px dotted #d8d4db;
+
+	@include phone-portrait {
+		padding: 29px 15px 6px;
+	}
+
+	&.mkd-working-hours-light {
+		color: #fff;
+
+		.mkd-wh-title,
+		.mkd-wh-day {
+			color: #fff;
+		}
+	}
+
+	.mkd-wh-title {
+		text-align: left;
+		margin-bottom: 6px;
+	}
+
+	.mkd-wh-item {
+		position: relative;
+		margin-bottom: 19px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #eee;
+
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 50px;
+		}
+	}
+
+	.mkd-wh-day {
+		padding-right: 3px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+	}
+
+	.mkd-wh-hours {
+		padding-left: 4px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		text-align: right;
+	}
+
+	.mkd-wh-dots {
+		height: 3px;
+		background-image: radial-gradient(circle closest-side, #b3b3b3 99%, rgba(0, 0, 0, 0) 100%);
+		background-position: 50% 70%;
+		background-size: 6px 2px;
+		background-repeat: repeat-x;
+		display: table-cell;
+		width: 98%;
+		z-index: 1;
+		position: relative;
+	}
+
+	.mkd-wh-text-holder {
+		margin-bottom: 53px;
+		margin-right: 32px;
+
+		h5 {
+			color: $second-text-color;
+		}
+	}
+}

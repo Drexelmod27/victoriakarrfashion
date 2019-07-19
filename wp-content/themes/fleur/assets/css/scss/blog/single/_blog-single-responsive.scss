@@ -1,0 +1,104 @@
+@include laptop-landscape {
+	.single .mkd-author-description .mkd-author-description-image {
+		height: 250px;
+	}
+}
+
+@include ipad-portrait {
+	.single {
+		.mkd-blog-single-navigation {
+
+			.mkd-blog-single-next {
+				.mkd-icon-stack {
+					display: none;
+				}
+				.mkd-single-next-title-label {
+					width: 100%;
+					padding: 0;
+				}
+			}
+			.mkd-blog-single-prev {
+				.mkd-icon-stack {
+					display: none;
+				}
+				.mkd-single-prev-title-label {
+					width: 100%;
+					padding: 0;
+				}
+			}
+		}
+		.mkd-author-description .mkd-author-description-image {
+			width: 240px;
+			height: 240px;
+		}
+
+		.mkd-author-description .mkd-author-description-text-holder {
+			padding-left: 265px;
+		}
+	}
+
+}
+
+@include phone-landscape {
+	.mkd-blog-holder.mkd-blog-single .mkd-author-description .mkd-author-description-text-holder {
+		padding-left: 36px;
+	}
+
+	.mkd-blog-single-navigation .mkd-blog-single-prev.mkd-single-nav-with-image .mkd-single-nav-content-holder {
+		padding-left: 0 !important;
+		float: left !important;
+	}
+
+	.mkd-blog-single-navigation .mkd-blog-single-next.mkd-single-nav-with-image .mkd-single-nav-content-holder {
+		padding-right: 0 !important;
+		float: right !important;
+	}
+
+	.single .mkd-blog-date-on-side article.format-link .mkd-post-info {
+		margin-left: 0;
+		float: left;
+		margin-top: 50px;
+	}
+
+	.single .mkd-blog-date-on-side article.format-quote .mkd-post-info {
+		margin-left: 0;
+		float: left;
+	}
+	.single .mkd-blog-date-on-side .mkd-single-tag {
+		width: 100%;
+	}
+	.mkd-author-description-image {
+		display: none;
+	}
+
+	.single {
+		.mkd-blog-single-navigation {
+			.mkd-blog-single-next {
+				width: 100%;
+
+				.mkd-single-next-title-label {
+					width: 100%;
+					padding: 0;
+
+					.mkd-single-next-title, .mkd-single-next-label {
+						text-align: center;
+					}
+				}
+			}
+			.mkd-blog-single-prev {
+				width: 100%;
+				padding-bottom: 20px;
+
+				.mkd-single-prev-title-label {
+					width: 100%;
+					padding: 0;
+
+					.mkd-single-prev-title, .mkd-single-prev-label {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+}

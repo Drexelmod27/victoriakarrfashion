@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Accordion shortcode start styles
+   ========================================================================== */
+.mkd-accordion-holder {
+	position: relative;
+
+	.mkd-accordion-content {
+		margin-top: -8px;
+		padding: 0px 45px 26px 45px;
+
+		&.mkd-with-icon {
+			padding: 0px 45px 26px 51px;
+		}
+
+		&:last-of-type {
+			border-bottom: 0 !important;
+		}
+
+		p {
+			line-height: 27px;
+			margin: 0;
+		}
+
+		&.ui-accordion-content-active {
+			border-bottom: 1px solid #c0bfc1;
+		}
+
+	}
+
+	.mkd-title-holder {
+		cursor: pointer;
+		position: relative;
+		margin: 0;
+		line-height: 20px;
+		padding: 34px 0 31px 42px;
+		color: $second-text-color;
+		border-bottom: 1px solid #c0bfc1;
+
+		@include mkdBoxSizing(border-box);
+		@include mkdTransform(translateZ(0px));
+		@include mkdTransition(background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out);
+
+		&:first-child {
+			margin: 0;
+		}
+
+		.mkd-tab-title,
+		.mkd-tab-title-inner {
+			color: inherit;
+			line-height: inherit;
+		}
+
+		span.mkd-accordion-number {
+			color: $first-main-color;
+			font-size: 26px;
+			font-weight: 400;
+			margin-right: 15px;
+		}
+
+		.mkd-accordion-mark {
+			position: absolute;
+			top: 50%;
+			right: 8px;
+			display: block;
+			width: 24px;
+			height: 24px;
+			line-height: 1em;
+			color: #fff;
+
+			@include mkdBorderRadius(50%);
+			@include mkdTransform(translateY(-50%));
+			@include mkdBoxSizing(border-box);
+			@include mkdTransition(background-color 0.15s ease-out, border-color 0.15s ease-out);
+		}
+
+		.mkd-accordion-mark-icon {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			line-height: 20px;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.mkd-accordion-mark-icon span {
+			position: absolute;
+			display: block;
+			line-height: inherit;
+
+			@include mkdTransition(opacity 0.15s ease-out);
+		}
+
+		.mkd-accordion-mark-icon .icon_minus-06 {
+			opacity: 0;
+		}
+
+		.mkd-accordion-mark-icon .icon_plus {
+			opacity: 1;
+		}
+
+		.mkd-accordion-mark {
+			color: $first-main-color;
+		}
+
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+
+	.mkd-title-holder.ui-state-active {
+		border-color: transparent;
+
+		.mkd-accordion-mark-icon .icon_minus-06 {
+			opacity: 1;
+		}
+
+		.mkd-accordion-mark-icon .icon_plus {
+			opacity: 0;
+		}
+	}
+}
+
+.mkd-accordion-holder.mkd-initial {
+
+	.mkd-title-holder .mkd-tab-title {
+		&:before {
+			content: '';
+			width: 7px;
+			height: 7px;
+			display: block;
+			position: absolute;
+			left: -19px;
+			margin-top: -5px;
+			top: 50%;
+			background-color: $first-main-color;
+
+			@include mkdTransform(translateY(-50%));
+			@include mkdTransform(rotate(45deg));
+		}
+
+		&.mkd-with-icon {
+			margin-left: -24px;
+			padding-left: 31px;
+
+			.mkd-icon-accordion-holder {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				font-size: 18px;
+
+				@include mkdTransform(translateY(-50%));
+			}
+
+			&:before {
+				display: none;
+			}
+
+		}
+
+		text-align: left;
+
+		@include mkdTableLayout;
+		@include mkdBoxSizing(border-box);
+
+		span.mkd-tab-title-inner {
+			position: relative;
+			@include mkdTableCellLayout;
+			text-align: left;
+		}
+	}
+
+}
+
+.mkd-accordion-holder.mkd-boxed {
+
+	border: 1px solid #363636;
+
+	.mkd-title-holder {
+		border-bottom: 0;
+		text-align: left;
+		padding: 24px 50px 24px 33px;
+		background-color: #1a1a1a;
+		border: 1px solid #363636;
+		border-top: 0 !important;
+
+		@include mkdTransition(background-color 0.15s ease-out, border-color 0.15s ease-out);
+
+		span.mkd-icon-accordion-holder {
+			margin-right: 6px;
+			font-size: 18px;
+		}
+
+		.mkd-accordion-mark {
+			border: 0;
+			background-color: transparent;
+
+			@include mkdTransition(color 0.15s ease-out);
+		}
+	}
+
+	.mkd-title-holder.ui-state-active,
+	.mkd-title-holder.ui-state-hover {
+		color: #fff;
+		background-color: #1f1f22;
+		border-color: #363636;
+
+		.mkd-accordion-mark {
+			color: #fff;
+		}
+	}
+}

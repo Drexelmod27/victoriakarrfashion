@@ -1,0 +1,158 @@
+.mkd-process-holder {
+	position: relative;
+
+	&.appeared .mkd-number-holder-inner {
+		&:before, &:after {
+			opacity: 1;
+		}
+	}
+
+	.mkd-process-inner {
+		@include mkdClearfix;
+	}
+
+	.mkd-number-holder-inner {
+		font-size: 40px;
+		font-weight: 400;
+		color: $first-main-color;
+		position: relative;
+		height: 190px;
+		width: 190px;
+		line-height: 187px;
+		top: 10px;
+		border: 3px dotted #d8d4db;
+		margin: 0 auto;
+		box-sizing: border-box;
+		border-radius: 50%;
+
+		span {
+			position: relative;
+			z-index: 999;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 100%;
+			margin-top: -2px;
+			width: 100%;
+			border-top: 3px dotted #d8d4db;
+			opacity: 0;
+
+			@include mkdTransition(opacity 1s ease 1s);
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 100%;
+			margin-top: -2px;
+			width: 100%;
+			border-top: 3px dotted #d8d4db;
+			opacity: 0;
+
+			@include mkdTransition(opacity 1s ease 1s);
+		}
+	}
+
+	.mkd-process-item-holder {
+		text-align: center;
+		float: left;
+		width: 25%;
+		overflow: hidden;
+
+		&:first-child .mkd-number-holder-inner:before {
+			display: none;
+		}
+
+		&:last-child .mkd-number-holder-inner:after {
+			display: none;
+		}
+
+		&.light .mkd-number-holder-inner span {
+			color: #fff;
+		}
+
+		.mkd-pi-content-holder {
+			margin: 0 20px;
+		}
+
+		.no-touch & {
+			opacity: 0;
+		}
+
+		.mkd-pi-holder-inner {
+			margin: 0 auto;
+
+			.mkd-border {
+				position: absolute;
+				margin: 0 auto;
+				height: 168px;
+				width: 168px;
+				background-color: #fff;
+				top: 8px;
+				left: 8px;
+				border-radius: 50%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+
+		&.mkd-pi-push-right {
+			.mkd-pi-holder-inner {
+				float: right;
+			}
+		}
+	}
+
+	&.mkd-process-holder-items-three {
+		.mkd-process-item-holder {
+			width: 33.33%;
+		}
+	}
+
+	&.mkd-process-multiple-highlights {
+		.mkd-pi-holder-inner {
+			width: 100%;
+		}
+	}
+
+	.mkd-pi-title-holder {
+		margin-bottom: 7px;
+	}
+
+	.mkd-pi-title {
+		margin-bottom: 16px;
+		color: #3b3b3b;
+		margin-top: 30px;
+	}
+
+	.mkd-pi-text-holder {
+		p {
+			margin: 0;
+		}
+	}
+
+	.mkd-pi-image-holder {
+		background-color: #fff;
+
+		display: inline-block;
+		width: 214px;
+		height: 214px;
+		border: 1px dashed #ebebeb;
+		padding: 10px;
+		margin-bottom: 20px;
+
+		overflow: hidden;
+
+		@include mkdBorderRadius(50%);
+		@include mkdBoxSizing(border-box);
+
+		img {
+			vertical-align: middle;
+			width: 100%;
+		}
+	}
+}

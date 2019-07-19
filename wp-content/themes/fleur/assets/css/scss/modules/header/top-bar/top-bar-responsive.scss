@@ -1,0 +1,5 @@
+.mkd-top-bar {
+	@include ipad-landscape {
+        display: none;
+	}
+}

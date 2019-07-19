@@ -1,0 +1,14 @@
+.mkd-blog-holder {
+	&.mkd-masonry-full-width {
+
+		article {
+			width: 18.4%;
+		}
+		.mkd-blog-masonry-grid-sizer {
+			width: 18.4%;
+		}
+		.mkd-blog-masonry-grid-gutter {
+			width: 2%;
+		}
+	}
+}

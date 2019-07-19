@@ -1,0 +1,142 @@
+.mkd-header-vertical {
+	.mkd-vertical-dropdown-float {
+		ul li {
+			overflow: hidden;
+			&:hover {
+				overflow: visible;
+			}
+		}
+		.menu-item .second {
+			background-color: #fff;
+			position: absolute;
+			top: 0;
+			left: 100%;
+			margin-left: 50px;
+			opacity: 0;
+			visibility: hidden;
+			@include mkdTransition(margin 0.25s cubic-bezier(0, 0.57, 0.58, 1));
+
+			* {
+				visibility: hidden;
+			}
+
+			.inner {
+				position: relative;
+				display: block;
+				padding: 0;
+				z-index: 997;
+			}
+		}
+
+		.menu-item .second.mkd-float-open {
+			margin-left: 0px;
+			opacity: 1;
+			visibility: visible;
+
+			* {
+				visibility: visible;
+			}
+		}
+
+		.menu-item .second.vertical_menu_start ul li ul,
+		.menu-item .second.vertical_menu_start ul li ul * {
+			visibility: hidden;
+		}
+
+		.menu-item .second.vertical_menu_start ul li ul.mkd-float-open,
+		.menu-item .second.vertical_menu_start ul li ul.mkd-float-open * {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.second .inner ul {
+			margin: 0px;
+			padding: 10px 0px;
+
+			li {
+				display: block;
+				padding: 0px;
+				position: relative;
+				overflow: hidden;
+				float: none;
+				height: auto;
+				background: 0;
+				width: 220px;
+				@include mkdTransition(background-color 0.15s ease-out);
+
+				a {
+					display: block;
+					color: $default-text-color;
+					height: auto;
+					font-size: 13px;
+					line-height: 18px;
+					font-weight: 400;
+					padding: 10px 27px;
+					position: relative;
+					@include mkdTransition(color 0.2s ease);
+
+					.plus {
+						font-size: 12px;
+						line-height: 12px;
+						width: 12px;
+						height: 12px;
+					}
+
+					.item_text {
+						display: block;
+						margin: 0;
+						overflow: hidden;
+						padding: 0;
+						position: relative;
+						transition: padding 0.2s ease 0s;
+					}
+				}
+
+				&:hover,
+				&.sub ul li:hover {
+					overflow: visible;
+
+				}
+
+				&.menu-item-has-children > a .plus:before {
+					content: "\35";
+				}
+			}
+		}
+
+		.second .inner ul ul {
+			background-color: #fff;
+			position: absolute;
+			top: -10px;
+			left: 100%;
+			margin-left: 50px;
+			height: auto;
+			visibility: hidden;
+			width: 100%;
+			opacity: 0;
+			overflow: hidden;
+			z-index: 10;
+			@include mkdTransition(all 0.25s cubic-bezier(0, 0.57, 0.58, 1));
+		}
+
+		.second .inner ul ul.mkd-float-open {
+			opacity: 1;
+			margin-left: 0;
+			visibility: visible;
+		}
+
+		li.current-menu-item > a,
+		.second .inner > ul > li:hover > a,
+		.second .inner ul li.sub ul li:hover > a,
+		.second .inner ul li ul li:hover > a {
+
+			.item_text {
+				color: $first-main-color;
+
+				&:after {
+					left: 0px;
+				}
+			}
+		}
+	}
+}

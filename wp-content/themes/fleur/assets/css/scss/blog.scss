@@ -1,0 +1,249 @@
+@import 'variables';
+@import 'mixins';
+@import 'blog/lists/blog-lists';
+@import 'blog/single/blog-single';
+
+/* ==========================================================================
+   #Self Hosted Video styles - start
+   ========================================================================== */
+
+.mkd-blog-holder {
+
+	article {
+
+		.mkd-audio-image-holder {
+			position: relative;
+
+			.mkd-audio-player-holder {
+				position: relative;
+				width: 100%;
+
+				.mejs-container .mejs-controls {
+					height: 42px !important;
+				}
+
+			}
+
+		}
+	}
+
+}
+
+.mkd-self-hosted-video-holder .mkd-video-wrap .mejs-container,
+.mkd-self-hosted-video-holder .mkd-video-wrap .mejs-overlay-play {
+	height: 100% !important;
+	/*!important because of the inline style*/
+	width: 100% !important;
+	/*!important because of the inline style*/
+}
+
+//.mejs-container, .mejs-embed, .mejs-embed body, .mejs-container .mejs-controls {
+//	background-color: #303030;
+//}
+
+.mejs-container {
+	height: 42px !important;
+
+	.mkd-blog-audio-holder {
+		background-color: $first-main-color;
+	}
+}
+
+.mejs-container * {
+	font-family: $default-font-family;
+}
+
+.mejs-container .mejs-controls {
+	height: 42px;
+	visibility: visible !important;
+	opacity: 1 !important;
+
+	background-color: #d8d4db;
+}
+
+.mejs-container .mejs-controls div {
+	height: 42px;
+	text-align: center;
+	line-height: 40px;
+}
+
+.mejs-controls .mejs-button button {
+	background: none;
+	font-family: 'ElegantIcons';
+	color: $first-main-color;
+	margin: 0;
+	height: 100%;
+	position: static;
+	width: auto;
+	display: inline-block;
+	-webkit-transition: color 0.15s ease-out;
+	-moz-transition: color 0.15s ease-out;
+	transition: color 0.15s ease-out;
+}
+
+.mejs-controls .mejs-button button:focus {
+	outline: none;
+}
+
+.mejs-container .mejs-controls .mejs-playpause-button {
+	width: 46px;
+}
+
+.mejs-controls .mejs-play button {
+	font-family: 'ElegantIcons';
+	font-size: 22px;
+	color: $first-main-color;
+	margin-top: -1px;
+}
+
+.mejs-controls .mejs-play button:after {
+	content: "\49";
+}
+
+.mejs-controls .mejs-pause button {
+	font-family: 'ElegantIcons';
+	font-size: 18px;
+}
+
+.mejs-controls .mejs-pause button:after {
+	content: "\5f";
+}
+
+.mejs-controls .mejs-mute button {
+	font-family: 'ElegantIcons';
+	font-size: 15px;
+}
+
+.mejs-controls .mejs-mute button:after {
+	content: "\e069";
+}
+
+.mejs-controls .mejs-unmute button {
+	font-family: 'ElegantIcons';
+	font-size: 13px;
+}
+
+.mejs-controls .mejs-unmute button:after {
+	content: "\e067";
+}
+
+.mejs-container .mejs-controls .mejs-fullscreen-button {
+	width: 32px;
+}
+
+.mejs-container .mejs-controls .mejs-fullscreen-button button {
+	font-size: 13px;
+}
+
+.mejs-container .mejs-controls .mejs-fullscreen-button button:after {
+	content: " \30 ";
+}
+
+.mejs-container .mejs-controls .mejs-time {
+	height: 39px;
+	color: $first-main-color;
+	padding: 0;
+	width: 35px;
+	font-size: 12px;
+	font-weight: 600;
+
+	&.mejs-currenttime-container {
+		position: absolute;
+	}
+
+	&.mejs-duration-container {
+		padding-left: 6px;
+		position: relative;
+
+		&:before {
+			content: '/  ';
+			position: absolute;
+			left: 2px;
+			font-size: 20px;
+			font-weight: 400;
+		}
+	}
+}
+
+.mejs-container.mejs-video .mejs-controls .mejs-time.mejs-currenttime-container {
+	right: 97px;
+}
+
+.mejs-container.mejs-audio .mejs-controls .mejs-time.mejs-currenttime-container {
+	right: 130px;
+}
+
+.touch {
+	.mejs-container.mejs-video .mejs-controls .mejs-time.mejs-currenttime-container {
+		right: 70px;
+	}
+
+	.mejs-container.mejs-audio .mejs-controls .mejs-time {
+		&.mejs-currenttime-container {
+			right: 48px;
+		}
+		&.mejs-duration-container {
+			padding-right: 10px;
+		}
+	}
+}
+
+.mejs-controls div.mejs-time-rail {
+	padding-top: 0;
+	margin-right: 40px;
+}
+
+.mejs-controls a.mejs-horizontal-volume-slider {
+	margin-right: 10px;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-float {
+	display: none !important;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-total,
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+	height: 5px;
+	background-color: #ebeff1;
+
+	@include mkdBorderRadius(5px);
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	margin-top: 17px;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-current:after {
+	content: '';
+	height: 13px;
+	width: 13px;
+	background-color: $first-main-color;
+	position: absolute;
+	bottom: 50%;
+	right: 0;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transform: translate(50%, 50%);
+	-moz-transform: translate(50%, 50%);
+	transform: translate(50%, 50%);
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	height: 5px;
+	background-color: #ffffff;
+
+	@include mkdBorderRadius(5px);
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-current,
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+	background-color: $first-main-color;
+	height: 5px;
+
+	@include mkdBorderRadius(5px);
+}
+
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */
