@@ -10920,6 +10920,7 @@ footer .mkd-footer-bottom-holder .widget .mkd-footer-widget-title {
   margin-top: 8px;
   width: 60%;
   margin-bottom: 0;
+  color: #E7DC8B 
 }
 
 .mkd-title .mkd-title-holder {
@@ -15978,7 +15979,7 @@ body.mkd-fullscreen-search-with-bg-image.mkd-search-fade .mkd-fullscreen-search-
 }
 
 .mkd-accordion-holder .mkd-title-holder .mkd-accordion-mark {
-  color: #4a3e5a;
+  color: #E7DC8B;
 }
 
 .mkd-accordion-holder .mkd-title-holder:last-of-type {
@@ -15997,7 +15998,7 @@ body.mkd-fullscreen-search-with-bg-image.mkd-search-fade .mkd-fullscreen-search-
   opacity: 0;
 }
 
-.mkd-accordion-holder.mkd-initial .mkd-title-holder .mkd-tab-title {
+.mkd-accordion-holder.mkd-initial .mkd-tit le-holder .mkd-tab-title{
   text-align: left;
   position: relative;
   display: table;
@@ -16007,6 +16008,7 @@ body.mkd-fullscreen-search-with-bg-image.mkd-search-fade .mkd-fullscreen-search-
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+ 
 }
 
 .mkd-accordion-holder.mkd-initial .mkd-title-holder .mkd-tab-title:before {
