@@ -195,7 +195,7 @@
 	}footer .mkd-footer-top-holder .widget.widget_mkd_twitter_widget {
 		margin-bottom: 50px;
 	}footer .mkd-footer-top:not(.mkd-footer-top-full) .mkd-container-inner {
-		padding: 107px 0 90px;
+		padding: 50px 0px 20px 0px;
 	}
 }@media only screen and (max-width:480px) {
 	footer .mkd-footer-bottom-holder .mkd-footer-bottom-left {
