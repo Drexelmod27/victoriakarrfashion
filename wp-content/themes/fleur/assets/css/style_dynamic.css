@@ -106,7 +106,13 @@ body.archive:not(.woocommerce) .mkd-wrapper-inner, body.archive:not(.woocommerce
             .mkd-drop-down .wide .second ul li ul li a{
                                      font-size: 12px;                                                                          }
                 
-        .mkd-mobile-header .mkd-mobile-nav a, .mkd-mobile-header .mkd-mobile-nav h4 { color: #e7dc8b;}
+        .mkd-mobile-header .mkd-mobile-header-inner { background-color: #181818;}
+
+.mkd-mobile-header .mkd-mobile-nav { background-color: #ffffff;}
+
+.mkd-mobile-header .mkd-mobile-nav a, .mkd-mobile-header .mkd-mobile-nav h4 { color: #e7dc8b;}
+
+.mkd-mobile-header .mkd-mobile-menu-opener a { color: #ffffff;}
 
 .mkd-page-header .mkd-search-opener { font-size: 22px;}
 

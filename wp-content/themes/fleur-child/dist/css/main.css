@@ -500,3 +500,59 @@ body:after {
     content: 'XL Desktop: 2100px'; }
   body:after, body:before {
     background: green; } }
+
+  
+.mkd-footer-widget-title {
+  text-align: center;
+}
+
+.textwidget {
+  text-align: center;
+}
+
+.mkd-footer-top-holder .widget .mkd-footer-widget-title {
+  margin-bottom: 15px;
+}
+
+.mkd-btn.mkd-btn-solid, .post-password-form input[type=submit], .woocommerce .button, input.wpcf7-form-control.wpcf7-submit {
+ color: #181818;
+}
+
+.vc_custom_1485259821273 {
+  display: none;
+}
+@media only screen and (min-width: 1000px) {
+  .vc_custom_1485259821273  {
+    display: block;
+  }
+}
+
+.vc_single_image-img {
+  display: none;
+}
+@media only screen and (min-width: 1000px) {
+  .vc_single_image-img {
+    display: block;
+  }
+}
+
+.mkd-accordion-holder {
+  margin-top: -160px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .mkd-accordion-holder {
+    margin-top: 0px;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .mkd-elements-holder .mkd-elements-holder-item .mkd-elements-holder-item-inner {
+    margin-bottom: 0px;
+  }
+}
+
+.mkd-icon-linear-icon .lnr .lnr-magnifier {
+  display: none;
+}

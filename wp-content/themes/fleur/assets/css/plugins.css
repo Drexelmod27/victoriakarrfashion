@@ -4381,3 +4381,8 @@ body div.pp_default a.pp_next:before {
 }
 
 /*# sourceMappingURL=plugins.css.map */
+
+
+.mkd-footer-widget-title {
+  text-align: center;
+}

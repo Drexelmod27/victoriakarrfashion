@@ -1,0 +1,36 @@
+version: "3.1"
+services:
+  anal:
+    image: wordpress
+    # restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - suckmydick
+    environment:
+      WORDPRESS_DB_HOST: suckmydick
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+  suckmydick:
+    image: mysql:5.7
+    command: "--innodb_use_native_aio=0"
+    # restart: always
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - suckmydick
+    ports:
+      - "8181:80"
+    environment:
+      MYSQL_USERNAME: letmein
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_PORT_3306_TCP_ADDR: my-wpdb
+
+volumes:
+  db_data: {}

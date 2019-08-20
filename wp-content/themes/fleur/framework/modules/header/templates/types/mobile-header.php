@@ -17,11 +17,14 @@
 						<?php endif; ?>
 						<?php if($show_logo) : ?>
 							<div class="mkd-position-center">
+						
 								<div class="mkd-position-center-inner">
+								
 									<?php fleur_mikado_get_mobile_logo(); ?>
 								</div>
 							</div>
 						<?php endif; ?>
+				
 						<div class="mkd-position-right">
 							<div class="mkd-position-right-inner">
 								<?php if(is_active_sidebar('mkd-right-from-mobile-logo')) {
