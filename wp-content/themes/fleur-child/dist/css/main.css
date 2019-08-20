@@ -501,58 +501,48 @@ body:after {
   body:after, body:before {
     background: green; } }
 
-  
-.mkd-footer-widget-title {
-  text-align: center;
-}
 
-.textwidget {
-  text-align: center;
-}
-
-.mkd-footer-top-holder .widget .mkd-footer-widget-title {
-  margin-bottom: 15px;
-}
-
-.mkd-btn.mkd-btn-solid, .post-password-form input[type=submit], .woocommerce .button, input.wpcf7-form-control.wpcf7-submit {
- color: #181818;
-}
 
 .vc_custom_1485259821273 {
   display: none;
 }
-@media only screen and (min-width: 1000px) {
-  .vc_custom_1485259821273  {
-    display: block;
-  }
-}
 
-.vc_single_image-img {
+.wpb_single_image.vc_align_left{
   display: none;
 }
-@media only screen and (min-width: 1000px) {
-  .vc_single_image-img {
-    display: block;
+
+@media (min-width: 600px) {
+  .wpb_single_image.vc_align_left {
+    display: block;}
   }
+
+  @media (min-width: 600px) {
+    .vc_custom_1485259821273{
+      display: block; }
+    }
+
+.mkd-elements-holder .mkd-elements-holder-item .mkd-elements-holder-item-inner {
+  margin-bottom: 200px;
+}
+
+@media (min-width: 600px) {
+  .mkd-elements-holder .mkd-elements-holder-item .mkd-elements-holder-item-inner {
+    margin-bottom: 0px; }
+  }
+
+.wpb_column .vc_column_container .vc_col-sm-12 .vc_col-lg-4 .vc_col-md-offset-0 .vc_col-md-12 {
+  display: none;
+}
+
+.wpb_column .vc_column_container .vc_col-sm-12 .vc_col-lg-4 .vc_col-md-offset-0 .vc_col-md-12 {
+  display: none;
 }
 
 .mkd-accordion-holder {
-  margin-top: -160px;
+  margin-top: -150px;
 }
 
-@media only screen and (min-width: 1000px) {
+@media (min-width: 600px) {
   .mkd-accordion-holder {
-    margin-top: 0px;
+    margin-top: 0px; }
   }
-}
-
-
-@media only screen and (min-width: 1000px) {
-  .mkd-elements-holder .mkd-elements-holder-item .mkd-elements-holder-item-inner {
-    margin-bottom: 0px;
-  }
-}
-
-.mkd-icon-linear-icon .lnr .lnr-magnifier {
-  display: none;
-}
