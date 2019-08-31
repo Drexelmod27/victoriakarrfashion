@@ -24,8 +24,10 @@ $header-light-color: #FFFFFF;
 $header-dark-color: #000000;
 
 //typography variables
-$default-font-family: 'Raleway', sans-serif;
-$additional-font-family: 'Playfair Display', serif;
+$default-font-family: 'Raleway',
+sans-serif;
+$additional-font-family: 'Playfair Display',
+serif;
 $default-text-color: #E7DC8B;
 $second-text-color: #656565;
 $third-text-color: #7E7E7E;
@@ -34,20 +36,18 @@ $default-text-line-height: 1.7333em;
 $auto-line-height: 1.2em;
 $elements-box-shadow-color: rgba(0, 0, 0, 0.08);
 $shop-price-color: #C0C0C0;
-$breakpoints: (
-		vertical-menu-laptop-wide-landscape: 1650px,
-		vertical-menu-laptop-landscape: 1490px,
-		large-laptop: 1400px,
-		vertical-menu-ipad-landscape: 1314px,
-		mac: 1280px,
-		laptop-landscape: 1200px,
-		ipad-landscape-plus-pixel: 1025px,
-		ipad-landscape: 1024px,
-		ipad-portrait: 768px,
-		phone-landscape: 600px,
-		phone-portrait: 480px,
-		smaller-phone-portrait: 300px
-);
+$breakpoints: (vertical-menu-laptop-wide-landscape: 1650px,
+	vertical-menu-laptop-landscape: 1490px,
+	large-laptop: 1400px,
+	vertical-menu-ipad-landscape: 1314px,
+	mac: 1280px,
+	laptop-landscape: 1200px,
+	ipad-landscape-plus-pixel: 1025px,
+	ipad-landscape: 1024px,
+	ipad-portrait: 768px,
+	phone-landscape: 600px,
+	phone-portrait: 480px,
+	smaller-phone-portrait: 300px);
 $vertical-menu-width: 260px;
 
 // social share colors

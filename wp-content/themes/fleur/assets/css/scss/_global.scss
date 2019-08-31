@@ -1,8 +1,67 @@
 /* #Reset default styles - start
    ========================================================================== */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
 	background: transparent;
 	border: 0;
 	margin: 0;
@@ -11,7 +70,16 @@ ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
 	outline: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
 	display: block;
 }
 
@@ -19,7 +87,8 @@ blockquote {
 	quotes: none;
 }
 
-blockquote:before, blockquote:after {
+blockquote:before,
+blockquote:after {
 	content: '';
 	content: none;
 }
@@ -51,7 +120,8 @@ a img {
 	border: none;
 }
 
-img, .wp-caption {
+img,
+.wp-caption {
 	max-width: 100%;
 	height: auto;
 }
@@ -74,8 +144,10 @@ select::-ms-expand {
 
 .clearfix:before,
 .clearfix:after {
-	content: " "; /* 1 */
-	display: table; /* 2 */
+	content: " ";
+	/* 1 */
+	display: table;
+	/* 2 */
 }
 
 .clearfix:after {
@@ -96,7 +168,8 @@ html {
 	height: 100%;
 	margin: 0 !important;
 	@include mkdTransition(all 0.33s ease-out);
-	overflow-y: scroll !important; /* to prevent page jumping on ajax and when there is not enough content */
+	overflow-y: scroll !important;
+	/* to prevent page jumping on ajax and when there is not enough content */
 }
 
 body {
@@ -112,7 +185,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: $first-main-color;
 	font-family: $default-font-family;
 	line-height: $auto-line-height;
@@ -159,7 +237,12 @@ h6 {
 	letter-spacing: 0;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
 	@include mkdTypographyLayout();
 }
 
@@ -187,7 +270,8 @@ input[type='submit'],
 	-webkit-appearance: none;
 }
 
-ul, ol {
+ul,
+ol {
 	list-style-position: inside;
 }
 
@@ -214,7 +298,8 @@ p {
 	margin: 10px 0px;
 }
 
-sub, sup {
+sub,
+sup {
 	font-size: 75%;
 	height: 0;
 	line-height: 0;
@@ -239,7 +324,8 @@ table {
 	width: 100%;
 }
 
-table thead tr, table tbody tr {
+table thead tr,
+table tbody tr {
 	border: 1px solid #e6e6e6;
 }
 
@@ -255,11 +341,11 @@ blockquote:not(.mkd-blockquote-shortcode) {
 	line-height: 1.6em;
 	margin: 20px 0;
 
-	&:before{
+	&:before {
 		display: none;
 	}
 
-	&:after{
+	&:after {
 		top: 0;
 	}
 }
@@ -321,17 +407,17 @@ blockquote cite {
 .alignfull {
 	position: relative;
 	left: -1rem;
-	width: calc( 100% + (2 * 1rem));
-	max-width: calc( 100% + (2 * 1rem));
+	width: calc(100% + (2 * 1rem));
+	max-width: calc(100% + (2 * 1rem));
 	clear: both;
 }
 
 @include ipad-landscape {
 
 	.alignfull {
-		left: calc( -12.5% - 75px);
-		width: calc( 125% + 150px);
-		max-width: calc( 125% + 150px);
+		left: calc(-12.5% - 75px);
+		width: calc(125% + 150px);
+		max-width: calc(125% + 150px);
 		margin-top: calc(2 * 1rem);
 		margin-bottom: calc(2 * 1rem);
 	}
@@ -370,7 +456,8 @@ blockquote cite {
 	margin-top: 0;
 	position: relative;
 	z-index: 100;
-	background-color: $default-background-color; /*this is needed because of the uncovering footer*/
+	background-color: $default-background-color;
+	/*this is needed because of the uncovering footer*/
 
 	ul,
 	ol {
@@ -398,22 +485,26 @@ blockquote cite {
 }
 
 /*visual composer override styles*/
-.wpb_row, .wpb_content_element,
-ul.wpb_thumbnails-fluid > li,
-.last_toggle_el_margin, .wpb_button {
+.wpb_row,
+.wpb_content_element,
+ul.wpb_thumbnails-fluid>li,
+.last_toggle_el_margin,
+.wpb_button {
 	margin-bottom: 0 !important; // important is in order to prevent visual composer styles in all cases
 }
 
 .mkd-content {
-	.mkd-content-inner > .mkd-container > .mkd-container-inner,
-	.mkd-content-inner > .mkd-full-width > .mkd-full-width-inner {
+
+	.mkd-content-inner>.mkd-container>.mkd-container-inner,
+	.mkd-content-inner>.mkd-full-width>.mkd-full-width-inner {
 		padding: 64px 0;
 	}
 }
 
 .mkd-boxed {
 
-	overflow: hidden !important; /* this is because content jumping while using accordion and display:inline-block on 'body.mkd-boxed .mkd-wrapper'   */
+	overflow: hidden !important;
+	/* this is because content jumping while using accordion and display:inline-block on 'body.mkd-boxed .mkd-wrapper'   */
 
 	.mkd-wrapper {
 		display: inline-block;
@@ -705,7 +796,7 @@ ul.wpb_thumbnails-fluid > li,
 .mkd-two-columns-50-50 {
 	width: 100%;
 
-	> .mkd-two-columns-50-50-inner {
+	>.mkd-two-columns-50-50-inner {
 		margin: 0 -15px;
 	}
 
@@ -722,7 +813,7 @@ ul.wpb_thumbnails-fluid > li,
 .mkd-two-columns {
 	width: 100%;
 
-	> .mkd-two-columns-inner {
+	>.mkd-two-columns-inner {
 		margin: 0 -15px;
 	}
 
@@ -739,7 +830,7 @@ ul.wpb_thumbnails-fluid > li,
 .mkd-four-columns {
 	width: 100%;
 
-	> .mkd-four-columns-inner {
+	>.mkd-four-columns-inner {
 		margin: 0 -15px;
 	}
 
@@ -756,7 +847,7 @@ ul.wpb_thumbnails-fluid > li,
 .mkd-five-columns {
 	width: 100%;
 
-	> .mkd-five-columns-inner {
+	>.mkd-five-columns-inner {
 		margin: 0 -15px;
 	}
 
@@ -771,6 +862,7 @@ ul.wpb_thumbnails-fluid > li,
 }
 
 body.woocommerce.woocommerce-page {
+
 	.mkd-two-columns-66-33.woocommerce_with_sidebar .mkd-column1 .mkd-column-inner,
 	.mkd-two-columns-75-25.woocommerce_with_sidebar .mkd-column1 .mkd-column-inner {
 		padding-left: 40px;
@@ -782,6 +874,7 @@ body.woocommerce.woocommerce-page {
 	}
 
 	.full_width {
+
 		.mkd-two-columns-66-33.woocommerce_with_sidebar .mkd-column1 .mkd-column-inner,
 		.mkd-two-columns-75-25.woocommerce_with_sidebar .mkd-column1 .mkd-column-inner {
 			padding-left: 0;
@@ -801,6 +894,7 @@ body.woocommerce.woocommerce-page {
 	from {
 		background-position: 0 0;
 	}
+
 	to {
 		background-position: 100% 0;
 	}
@@ -818,6 +912,7 @@ body.woocommerce.woocommerce-page {
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
@@ -827,6 +922,7 @@ body.woocommerce.woocommerce-page {
 	0% {
 		transform: rotate(-100.8deg);
 	}
+
 	100% {
 		transform: rotate(0deg);
 	}
@@ -837,10 +933,12 @@ body.woocommerce.woocommerce-page {
 		stroke-dasharray: 1 210.48671px;
 		stroke-dashoffset: 0;
 	}
+
 	40% {
 		stroke-dasharray: 151.55043px, 210.48671px;
 		stroke-dashoffset: 0;
 	}
+
 	100% {
 		stroke-dasharray: 1 210.48671px;
 		stroke-dashoffset: -151.55043px;
@@ -972,6 +1070,7 @@ img[data-lazy="true"] {
 		z-index: 112;
 		height: 100%;
 	}
+
 	.mkd-position-center {
 		height: 100%;
 		width: 100%;
@@ -1013,7 +1112,8 @@ img[data-lazy="true"] {
 		display: inline-block;
 		vertical-align: middle;
 		height: 100%;
-		margin-right: -3px; /* adjusts for spacing */
+		margin-right: -3px;
+		/* adjusts for spacing */
 	}
 
 }
@@ -1173,4 +1273,3 @@ section.parallax_section_holder.vertical_middle_align .parallax_content_outer {
 /* ==========================================================================
    #Row styles - end
    ========================================================================== */
-

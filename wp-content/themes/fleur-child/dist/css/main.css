@@ -501,6 +501,9 @@ body:after {
   body:after, body:before {
     background: green; } }
 
+.mkd-testimonial-content.testimonials-slider .mkd-testimonial-text {
+  font-family: Raleway, sans-serif; }
+
 .tp-bgimg .defaultimg {
   height: 100%;
   opacity: 0.6; }
@@ -510,3 +513,10 @@ body:after {
 
 .slotholder {
   opacity: 0.6; }
+
+.footer .mkd-footer-top:not(.mkd-footer-top-full) .mkd-container-inner {
+  padding: 25px 0px 0px 0px; }
+
+.mkd-title.mkd-content-center-alignment {
+  height: 687px;
+  background-size: cover; }

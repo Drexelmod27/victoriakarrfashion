@@ -79,7 +79,7 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 define( 'WP_HOME', 'http://localhost/victoriakarr/' );
 define( 'WP_SITEURL', 'http://localhost/victoriakarr/' );
 /* That's all, stop editing! Happy publishing. */
